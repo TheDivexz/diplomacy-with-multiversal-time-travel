@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfg3lnkgdtfpu"]
+
+[ext_resource type="Texture2D" uid="uid://duk0o8madwcr8" path="res://Untitled.png" id="1_kyjtp"]
+[ext_resource type="Script" path="res://Province.gd" id="2_0x21u"]
+
+[node name="Board" type="Node2D"]
+
+[node name="Untitled" type="Sprite2D" parent="."]
+position = Vector2(386.767, 322.25)
+scale = Vector2(0.663392, 0.663392)
+texture = ExtResource("1_kyjtp")
+
+[node name="Provinces" type="Node2D" parent="."]
+
+[node name="Brest" type="Polygon2D" parent="Provinces"]
+polygon = PackedVector2Array(224, 416, 226, 400, 223, 387, 226, 375, 228, 364, 224, 361, 218, 361, 219, 355, 212, 350, 211, 356, 214, 362, 212, 366, 211, 371, 206, 369, 197, 366, 195, 360, 189, 363, 184, 360, 177, 362, 182, 365, 183, 368, 180, 368, 178, 373, 182, 376, 188, 377, 192, 383, 198, 390, 199, 399, 199, 405, 202, 411)
+script = ExtResource("2_0x21u")
+
+[node name="Gascony" type="Polygon2D" parent="Provinces"]
+polygon = PackedVector2Array(202, 411, 224, 416, 230, 422, 235, 424, 240, 432, 248, 435, 246, 441, 250, 451, 245, 456, 237, 455, 219, 479, 213, 475, 209, 478, 195, 471, 186, 464, 185, 458, 191, 452, 192, 447, 194, 446, 195, 441, 198, 439, 196, 435, 200, 430, 200, 426, 203, 422, 205, 414)
