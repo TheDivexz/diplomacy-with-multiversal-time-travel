@@ -4,7 +4,7 @@ extends Node2D
 func _ready():
 	$Board.powers[$Board.power_name.AUSTRIA] = $Board.Power.new()
 	$Board.powers[$Board.power_name.AUSTRIA].name = "Austria"
-	$Board.powers[$Board.power_name.AUSTRIA].color = Color("d59bc4")
+	$Board.powers[$Board.power_name.AUSTRIA].color = Color("da9b8c")
 	$Board.powers[$Board.power_name.AUSTRIA].controlled_provinces.append($Board.get_province("BUD"))
 	$Board.powers[$Board.power_name.AUSTRIA].controlled_provinces.append($Board.get_province("TRI"))
 	$Board.powers[$Board.power_name.AUSTRIA].controlled_provinces.append($Board.get_province("VIE"))
