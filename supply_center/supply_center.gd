@@ -1,6 +1,7 @@
 extends Polygon2D
 
-
+enum power_name {AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY, NONE}
+@export var controller : power_name
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var border : Line2D = Line2D.new()

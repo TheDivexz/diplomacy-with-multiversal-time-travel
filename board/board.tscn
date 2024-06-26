@@ -15,16 +15,18 @@ texture = ExtResource("1_nnb7m")
 
 [node name="Provinces" type="Node2D" parent="."]
 
-[node name="BRE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
+[node name="BRE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors")]
 polygon = PackedVector2Array(147, 418, 168, 420, 168, 388, 173, 368, 166, 367, 164, 360, 157, 357, 157, 376, 144, 373, 140, 367, 118, 366, 115, 371, 118, 378, 125, 379, 142, 397, 141, 404, 142, 412)
 script = ExtResource("2_0x21u")
 supply_center = NodePath("../../Supply_Centers/BRE")
 terrain_type = 2
+neighbors = [NodePath("../ENG"), NodePath("../MAO"), NodePath("../GAS"), NodePath("../PAR"), NodePath("../PIC")]
 
-[node name="GAS" type="Polygon2D" parent="Provinces"]
+[node name="GAS" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("neighbors")]
 polygon = PackedVector2Array(147, 418, 139, 440, 141, 443, 129, 460, 130, 469, 154, 480, 155, 477, 163, 480, 171, 464, 181, 457, 193, 455, 188, 446, 190, 442, 182, 438, 179, 431, 171, 429, 168, 420)
 script = ExtResource("2_0x21u")
 terrain_type = 2
+neighbors = [NodePath("../MAO"), NodePath("../SPA"), NodePath("../MAR"), NodePath("../BUR"), NodePath("../PAR"), NodePath("../BRE")]
 
 [node name="MAR" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(163, 480, 177, 492, 182, 489, 182, 481, 195, 475, 203, 481, 215, 486, 229, 485, 243, 479, 234, 472, 235, 463, 231, 460, 238, 456, 235, 449, 238, 445, 234, 437, 227, 443, 223, 440, 205, 439, 205, 449, 199, 456, 193, 455, 181, 457, 171, 464)

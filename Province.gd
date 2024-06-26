@@ -4,6 +4,7 @@ enum terrain {LAND, SEA, COASTAL, IMPASSABLE }
 
 @export var supply_center : Polygon2D
 @export var terrain_type : terrain
+@export var neighbors : Array[Polygon2D]
 var center : Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,3 +34,10 @@ func centroid(points : PackedVector2Array) -> Vector2:
 		y_sum += point.y
 		count += 1
 	return Vector2((x_sum/count),(y_sum/count))
+
+func set_ownership(control,col):
+	if supply_center == null:
+		return
+	supply_center.controller = control
+	supply_center.color = col
+	color = col
