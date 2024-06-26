@@ -2,7 +2,7 @@ extends Polygon2D
 
 enum terrain {LAND, SEA, COASTAL, IMPASSABLE }
 
-@export var supply_center : bool
+@export var supply_center : Polygon2D
 @export var terrain_type : terrain
 var center : Vector2
 # Called when the node enters the scene tree for the first time.

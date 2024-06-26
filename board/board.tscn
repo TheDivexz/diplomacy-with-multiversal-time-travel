@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfg3lnkgdtfpu"]
+[gd_scene load_steps=5 format=3 uid="uid://dfg3lnkgdtfpu"]
 
-[ext_resource type="Script" path="res://board.gd" id="1_2kr66"]
+[ext_resource type="Script" path="res://board/board.gd" id="1_2kr66"]
 [ext_resource type="Texture2D" uid="uid://capy8g1wk66en" path="res://map.png" id="1_nnb7m"]
 [ext_resource type="Script" path="res://Province.gd" id="2_0x21u"]
+[ext_resource type="PackedScene" uid="uid://d201vodw6pfgj" path="res://supply_center/supply_center.tscn" id="4_g23px"]
 
 [node name="Board" type="Node2D"]
 script = ExtResource("1_2kr66")
@@ -14,10 +15,10 @@ texture = ExtResource("1_nnb7m")
 
 [node name="Provinces" type="Node2D" parent="."]
 
-[node name="BRE" type="Polygon2D" parent="Provinces"]
+[node name="BRE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(147, 418, 168, 420, 168, 388, 173, 368, 166, 367, 164, 360, 157, 357, 157, 376, 144, 373, 140, 367, 118, 366, 115, 371, 118, 378, 125, 379, 142, 397, 141, 404, 142, 412)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/BRE")
 terrain_type = 2
 
 [node name="GAS" type="Polygon2D" parent="Provinces"]
@@ -25,42 +26,42 @@ polygon = PackedVector2Array(147, 418, 139, 440, 141, 443, 129, 460, 130, 469, 1
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="MAR" type="Polygon2D" parent="Provinces"]
+[node name="MAR" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(163, 480, 177, 492, 182, 489, 182, 481, 195, 475, 203, 481, 215, 486, 229, 485, 243, 479, 234, 472, 235, 463, 231, 460, 238, 456, 235, 449, 238, 445, 234, 437, 227, 443, 223, 440, 205, 439, 205, 449, 199, 456, 193, 455, 181, 457, 171, 464)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/MAR")
 terrain_type = 2
 
 [node name="BUR" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(221, 372, 236, 381, 235, 390, 243, 399, 245, 406, 240, 423, 223, 440, 205, 439, 205, 449, 199, 456, 193, 455, 188, 446, 190, 442, 182, 438, 179, 431, 213, 396, 216, 383)
 script = ExtResource("2_0x21u")
 
-[node name="PAR" type="Polygon2D" parent="Provinces"]
+[node name="PAR" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(170, 379, 183, 382, 190, 382, 198, 378, 216, 383, 213, 396, 179, 431, 171, 429, 168, 420, 168, 388)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/PAR")
 
 [node name="PIC" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(173, 368, 178, 369, 176, 363, 194, 358, 212, 363, 221, 372, 216, 383, 198, 378, 190, 382, 183, 382, 170, 379)
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="BEL" type="Polygon2D" parent="Provinces"]
+[node name="BEL" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(194, 358, 212, 363, 221, 372, 236, 381, 242, 375, 239, 363, 235, 358, 237, 352, 223, 349, 220, 345, 199, 347)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/BEL")
 terrain_type = 2
 
-[node name="HOL" type="Polygon2D" parent="Provinces"]
+[node name="HOL" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(220, 345, 223, 349, 237, 352, 235, 358, 239, 363, 242, 361, 246, 348, 247, 342, 253, 344, 259, 337, 261, 323, 260, 317, 243, 316, 238, 322, 236, 322, 236, 318, 228, 332, 227, 334)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/HOL")
 terrain_type = 2
 
-[node name="LON" type="Polygon2D" parent="Provinces"]
+[node name="LON" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(198, 339, 193, 341, 184, 343, 169, 340, 167, 323, 173, 319, 176, 312, 191, 310, 193, 311, 197, 309, 203, 311, 205, 316, 203, 326, 190, 337)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/LON")
 terrain_type = 2
 
 [node name="WAL" type="Polygon2D" parent="Provinces"]
@@ -68,10 +69,10 @@ polygon = PackedVector2Array(176, 312, 173, 304, 165, 302, 147, 302, 132, 306, 1
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="LVP" type="Polygon2D" parent="Provinces"]
+[node name="LVP" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(147, 302, 165, 302, 173, 304, 174, 285, 178, 276, 178, 263, 167, 250, 166, 246, 159, 247, 159, 250, 150, 257, 150, 262, 157, 264, 159, 277, 155, 288, 152, 288, 139, 296, 145, 295)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/LVP")
 terrain_type = 2
 
 [node name="YOR" type="Polygon2D" parent="Provinces"]
@@ -79,10 +80,10 @@ polygon = PackedVector2Array(178, 263, 188, 261, 188, 276, 194, 284, 196, 290, 1
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="EDI" type="Polygon2D" parent="Provinces"]
+[node name="EDI" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(166, 246, 167, 250, 178, 263, 188, 261, 185, 251, 176, 247, 190, 242, 196, 233, 197, 227, 182, 223, 175, 224, 168, 231)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/EDI")
 terrain_type = 2
 
 [node name="CLY" type="Polygon2D" parent="Provinces"]
@@ -90,29 +91,29 @@ polygon = PackedVector2Array(159, 247, 166, 246, 168, 231, 175, 224, 177, 217, 1
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="MUN" type="Polygon2D" parent="Provinces"]
+[node name="MUN" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(241, 419, 245, 406, 243, 399, 252, 396, 273, 371, 280, 371, 303, 357, 331, 352, 327, 362, 331, 370, 320, 376, 306, 375, 304, 379, 308, 395, 318, 399, 323, 410, 317, 417, 310, 417, 312, 426, 308, 424, 287, 428, 283, 425, 279, 426, 269, 422, 267, 418, 259, 417, 255, 421)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/MUN")
 
 [node name="RUH" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(280, 371, 277, 364, 267, 355, 246, 348, 242, 361, 239, 363, 242, 375, 236, 381, 235, 390, 243, 399, 252, 396, 273, 371)
 script = ExtResource("2_0x21u")
 
-[node name="KIE" type="Polygon2D" parent="Provinces"]
+[node name="KIE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(260, 317, 264, 315, 270, 316, 270, 319, 281, 314, 281, 310, 282, 303, 279, 296, 281, 293, 292, 294, 294, 303, 295, 307, 299, 310, 300, 316, 306, 317, 306, 326, 301, 331, 304, 338, 300, 341, 303, 357, 280, 371, 277, 364, 267, 355, 246, 348, 247, 342, 253, 344, 259, 337, 261, 323)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/KIE")
 terrain_type = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="Provinces/KIE"]
 color = Color(0.6, 0.8, 1, 1)
 polygon = PackedVector2Array(281, 311, 281, 314, 295, 307, 294, 303)
 
-[node name="BER" type="Polygon2D" parent="Provinces"]
+[node name="BER" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(306, 317, 306, 326, 301, 331, 304, 338, 300, 341, 303, 357, 331, 352, 341, 346, 342, 341, 336, 334, 338, 317, 329, 316, 330, 308, 322, 307)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/BER")
 terrain_type = 2
 
 [node name="PRU" type="Polygon2D" parent="Provinces"]
@@ -132,30 +133,30 @@ script = ExtResource("2_0x21u")
 polygon = PackedVector2Array(269, 422, 269, 431, 277, 435, 282, 442, 280, 447, 283, 451, 288, 457, 294, 454, 298, 447, 308, 443, 318, 445, 333, 444, 338, 438, 339, 417, 336, 411, 323, 410, 317, 417, 310, 417, 312, 426, 308, 424, 287, 428, 283, 425, 279, 426)
 script = ExtResource("2_0x21u")
 
-[node name="VIE" type="Polygon2D" parent="Provinces"]
+[node name="VIE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(349, 399, 364, 401, 370, 400, 379, 399, 388, 403, 388, 403, 386, 408, 384, 410, 370, 427, 358, 432, 354, 441, 344, 444, 338, 438, 339, 417, 336, 411, 339, 402)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/VIE")
 
 [node name="GAL" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(383, 380, 392, 380, 396, 383, 407, 377, 410, 372, 416, 374, 422, 379, 430, 377, 436, 373, 441, 377, 443, 383, 460, 390, 465, 408, 464, 415, 465, 428, 453, 433, 442, 420, 435, 418, 434, 415, 424, 407, 414, 405, 403, 400, 388, 403, 379, 399, 370, 400, 369, 391, 374, 392, 379, 389)
 script = ExtResource("2_0x21u")
 
-[node name="BUD" type="Polygon2D" parent="Provinces"]
+[node name="BUD" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(388, 403, 403, 400, 414, 405, 424, 407, 434, 415, 435, 418, 442, 420, 453, 433, 454, 440, 462, 444, 467, 456, 461, 463, 445, 463, 422, 468, 420, 475, 414, 476, 393, 472, 389, 475, 385, 472, 382, 472, 372, 470, 369, 458, 358, 454, 354, 441, 358, 432, 370, 427, 384, 410, 386, 408)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/BUD")
 
-[node name="TRI" type="Polygon2D" parent="Provinces"]
+[node name="TRI" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(318, 445, 333, 444, 338, 438, 344, 444, 354, 441, 358, 454, 369, 458, 372, 470, 382, 472, 380, 479, 381, 488, 376, 494, 380, 504, 388, 514, 380, 513, 381, 523, 352, 502, 333, 482, 329, 463, 325, 462, 320, 472, 316, 464, 317, 460, 321, 448)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/TRI")
 terrain_type = 2
 
-[node name="VEN" type="Polygon2D" parent="Provinces"]
+[node name="VEN" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(321, 448, 318, 445, 308, 443, 298, 447, 294, 454, 288, 457, 283, 451, 268, 465, 271, 473, 276, 478, 291, 482, 303, 500, 315, 515, 320, 510, 313, 488, 299, 480, 300, 462, 311, 458, 317, 460)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/VEN")
 terrain_type = 2
 
 [node name="PIE" type="Polygon2D" parent="Provinces"]
@@ -168,10 +169,10 @@ polygon = PackedVector2Array(268, 478, 271, 473, 276, 478, 291, 482, 303, 500, 2
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="ROM" type="Polygon2D" parent="Provinces"]
+[node name="ROM" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(284, 509, 288, 504, 303, 500, 315, 515, 321, 520, 322, 524, 321, 528, 312, 535, 294, 528, 285, 515)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/ROM")
 terrain_type = 2
 
 [node name="APU" type="Polygon2D" parent="Provinces"]
@@ -179,16 +180,16 @@ polygon = PackedVector2Array(315, 515, 320, 510, 334, 522, 345, 522, 342, 525, 3
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="NAP" type="Polygon2D" parent="Provinces"]
+[node name="NAP" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(312, 535, 321, 528, 337, 554, 350, 558, 358, 566, 354, 577, 340, 593, 334, 592, 333, 589, 338, 578, 334, 561, 317, 546)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/NAP")
 terrain_type = 2
 
-[node name="TUN" type="Polygon2D" parent="Provinces"]
+[node name="TUN" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(224, 644, 267, 644, 269, 635, 267, 627, 259, 616, 266, 612, 271, 604, 268, 602, 258, 607, 257, 597, 251, 594, 244, 596, 239, 601, 233, 599, 227, 607)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/TUN")
 terrain_type = 2
 
 [node name="NAF" type="Polygon2D" parent="Provinces"]
@@ -196,66 +197,66 @@ polygon = PackedVector2Array(224, 644, 0, 644, 0, 599, 20, 597, 38, 571, 43, 570
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="SPA" type="Polygon2D" parent="Provinces"]
+[node name="SPA" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(43, 564, 54, 562, 60, 563, 69, 560, 89, 565, 95, 569, 99, 560, 103, 557, 112, 558, 123, 546, 130, 545, 132, 541, 127, 531, 143, 511, 150, 506, 168, 505, 181, 498, 182, 489, 177, 492, 163, 480, 155, 477, 154, 480, 130, 469, 129, 460, 116, 456, 111, 457, 83, 442, 68, 439, 63, 432, 55, 431, 53, 436, 45, 432, 38, 439, 41, 443, 37, 456, 49, 455, 48, 460, 64, 461, 71, 468, 70, 473, 60, 475, 48, 498, 43, 497, 46, 508, 39, 515, 41, 527, 31, 539, 38, 547, 39, 557)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/SPA")
 terrain_type = 2
 
-[node name="POR" type="Polygon2D" parent="Provinces"]
+[node name="POR" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(37, 456, 49, 455, 48, 460, 64, 461, 71, 468, 70, 473, 60, 475, 48, 498, 43, 497, 46, 508, 39, 515, 41, 527, 31, 539, 22, 540, 9, 532, 15, 523, 14, 518, 17, 508, 15, 507, 11, 499, 16, 491, 20, 492, 35, 468)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/POR")
 terrain_type = 2
 
-[node name="RUM" type="Polygon2D" parent="Provinces"]
+[node name="RUM" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(464, 415, 473, 416, 476, 429, 487, 433, 486, 441, 491, 460, 504, 458, 505, 465, 497, 471, 495, 488, 486, 484, 472, 484, 465, 486, 458, 492, 449, 490, 439, 492, 432, 488, 426, 490, 422, 485, 420, 475, 422, 468, 445, 463, 461, 463, 467, 456, 462, 444, 454, 440, 453, 433, 465, 428)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/RUM")
 terrain_type = 2
 
-[node name="BUL" type="Polygon2D" parent="Provinces"]
+[node name="BUL" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(422, 485, 420, 489, 424, 499, 427, 504, 421, 506, 427, 525, 420, 531, 424, 535, 424, 535, 433, 535, 446, 530, 451, 543, 460, 539, 469, 541, 475, 535, 474, 523, 484, 519, 491, 518, 486, 508, 489, 492, 494, 491, 495, 488, 486, 484, 472, 484, 465, 486, 458, 492, 449, 490, 439, 492, 432, 488, 426, 490)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/BUL")
 terrain_type = 2
 
-[node name="SER" type="Polygon2D" parent="Provinces"]
+[node name="SER" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(388, 514, 398, 521, 398, 537, 403, 543, 409, 543, 415, 538, 424, 535, 420, 531, 427, 525, 421, 506, 427, 504, 424, 499, 420, 489, 422, 485, 420, 475, 414, 476, 393, 472, 389, 475, 385, 472, 382, 472, 380, 479, 381, 488, 376, 494, 380, 504)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/SER")
 
 [node name="ALB" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(381, 523, 380, 513, 388, 514, 398, 521, 398, 537, 403, 543, 403, 550, 390, 561, 385, 553, 385, 553, 381, 550)
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="GRE" type="Polygon2D" parent="Provinces"]
+[node name="GRE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(390, 561, 403, 550, 403, 543, 409, 543, 415, 538, 424, 535, 433, 535, 446, 530, 451, 543, 438, 544, 444, 550, 438, 549, 440, 556, 436, 558, 427, 550, 424, 556, 435, 569, 427, 566, 426, 569, 443, 586, 444, 594, 434, 591, 435, 600, 427, 599, 432, 618, 424, 612, 422, 617, 414, 608, 413, 614, 411, 600, 403, 592, 409, 587, 427, 588, 422, 584, 405, 585, 399, 576, 403, 574, 398, 573)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/GRE")
 terrain_type = 2
 
-[node name="CON" type="Polygon2D" parent="Provinces"]
+[node name="CON" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(469, 541, 475, 535, 474, 523, 484, 519, 491, 518, 495, 524, 506, 527, 509, 530, 534, 526, 539, 531, 539, 552, 536, 566, 520, 570, 497, 568, 487, 561, 480, 563, 480, 560, 470, 561, 472, 555, 476, 547, 472, 545)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/CON")
 terrain_type = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="Provinces/CON"]
 color = Color(0.6, 0.8, 1, 1)
 polygon = PackedVector2Array(506, 527, 509, 530, 505, 533, 516, 534, 489, 547, 476, 547, 474, 546, 479, 544, 484, 538, 501, 533)
 
-[node name="ANK" type="Polygon2D" parent="Provinces"]
+[node name="ANK" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(534, 526, 541, 515, 553, 504, 577, 499, 588, 507, 591, 505, 598, 508, 634, 503, 638, 505, 641, 518, 638, 530, 629, 532, 611, 530, 585, 553, 577, 555, 564, 553, 544, 566, 536, 566, 539, 552, 539, 531)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/ANK")
 terrain_type = 2
 
-[node name="SMY" type="Polygon2D" parent="Provinces"]
+[node name="SMY" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(480, 563, 487, 561, 497, 568, 520, 570, 536, 566, 544, 566, 564, 553, 577, 555, 585, 553, 611, 530, 629, 532, 638, 530, 640, 538, 647, 543, 648, 552, 639, 557, 627, 560, 617, 569, 609, 586, 606, 585, 598, 596, 588, 592, 581, 606, 565, 611, 558, 608, 547, 599, 536, 600, 534, 612, 521, 615, 515, 608, 507, 606, 501, 610, 501, 602, 491, 603, 487, 588, 480, 584, 480, 573, 483, 570)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/SMY")
 terrain_type = 2
 
 [node name="ARM" type="Polygon2D" parent="Provinces"]
@@ -268,35 +269,35 @@ polygon = PackedVector2Array(701, 568, 701, 644, 608, 644, 612, 616, 605, 610, 6
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="SEV" type="Polygon2D" parent="Provinces"]
+[node name="SEV" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(504, 458, 491, 460, 486, 441, 487, 433, 497, 429, 499, 415, 512, 403, 529, 398, 536, 354, 541, 349, 539, 340, 549, 333, 569, 340, 581, 323, 593, 329, 606, 331, 614, 326, 632, 327, 638, 351, 649, 351, 655, 370, 687, 380, 701, 380, 701, 507, 694, 508, 684, 506, 678, 509, 656, 492, 659, 480, 652, 470, 637, 468, 608, 454, 595, 453, 587, 445, 588, 441, 593, 442, 598, 427, 595, 427, 592, 421, 606, 408, 605, 405, 579, 419, 558, 435, 568, 446, 583, 442, 583, 448, 572, 452, 569, 456, 562, 458, 559, 466, 549, 462, 549, 456, 539, 452, 543, 443, 550, 441, 547, 439, 535, 441, 528, 437, 530, 434, 528, 432, 513, 436)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/SEV")
 terrain_type = 2
 
 [node name="UKR" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(441, 377, 444, 356, 449, 353, 525, 336, 539, 340, 541, 349, 536, 354, 529, 398, 512, 403, 499, 415, 497, 429, 487, 433, 476, 429, 473, 416, 464, 415, 465, 408, 460, 390, 443, 383)
 script = ExtResource("2_0x21u")
 
-[node name="WAR" type="Polygon2D" parent="Provinces"]
+[node name="WAR" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(420, 324, 428, 326, 437, 334, 437, 334, 444, 356, 441, 377, 436, 373, 430, 377, 422, 379, 416, 374, 410, 372, 407, 377, 396, 383, 392, 380, 383, 380, 375, 377, 371, 371, 368, 349, 373, 345, 375, 337, 393, 331, 397, 333, 413, 330)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/WAR")
 
-[node name="MOS" type="Polygon2D" parent="Provinces"]
+[node name="MOS" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(701, 380, 701, 136, 689, 152, 660, 165, 649, 184, 614, 189, 593, 195, 562, 213, 547, 211, 527, 224, 525, 239, 526, 242, 519, 246, 515, 241, 505, 243, 492, 260, 485, 264, 471, 263, 466, 275, 465, 317, 451, 320, 448, 329, 437, 334, 444, 356, 449, 353, 525, 336, 539, 340, 549, 333, 569, 340, 581, 323, 593, 329, 606, 331, 614, 326, 632, 327, 638, 351, 649, 351, 655, 370, 687, 380)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/MOS")
 
 [node name="LVN" type="Polygon2D" parent="Provinces"]
 polygon = PackedVector2Array(399, 281, 407, 289, 410, 301, 417, 300, 422, 305, 420, 324, 428, 326, 437, 334, 448, 329, 451, 320, 465, 317, 466, 275, 471, 263, 466, 250, 454, 237, 440, 238, 428, 236, 425, 233, 420, 235, 423, 242, 428, 246, 429, 255, 434, 262, 429, 264, 421, 263, 413, 254, 402, 264, 399, 280)
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="STP" type="Polygon2D" parent="Provinces"]
+[node name="STP" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(701, 136, 701, 1, 621, 1, 616, 11, 610, 7, 595, 22, 594, 39, 590, 44, 590, 27, 584, 24, 581, 31, 574, 38, 566, 56, 570, 67, 562, 69, 551, 67, 551, 67, 549, 64, 554, 58, 544, 50, 536, 52, 543, 72, 550, 76, 550, 86, 543, 83, 539, 85, 526, 105, 540, 116, 537, 123, 532, 126, 511, 117, 509, 128, 514, 133, 522, 137, 520, 141, 500, 137, 490, 119, 490, 109, 476, 102, 474, 96, 512, 97, 526, 92, 528, 77, 521, 71, 480, 55, 466, 57, 462, 53, 457, 56, 447, 71, 445, 79, 452, 85, 451, 107, 462, 128, 462, 136, 472, 150, 476, 170, 471, 175, 474, 185, 463, 204, 464, 211, 473, 212, 476, 216, 469, 216, 461, 221, 459, 228, 446, 226, 427, 228, 425, 233, 428, 236, 440, 238, 454, 237, 466, 250, 471, 263, 485, 264, 492, 260, 505, 243, 515, 241, 519, 246, 526, 242, 525, 239, 527, 224, 547, 211, 562, 213, 593, 195, 615, 189, 649, 184, 660, 165, 689, 152)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/STP")
 terrain_type = 2
 
 [node name="FIN" type="Polygon2D" parent="Provinces"]
@@ -304,22 +305,22 @@ polygon = PackedVector2Array(463, 204, 474, 185, 471, 175, 476, 170, 472, 150, 4
 script = ExtResource("2_0x21u")
 terrain_type = 2
 
-[node name="SWE" type="Polygon2D" parent="Provinces"]
+[node name="SWE" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(417, 124, 409, 120, 402, 129, 399, 140, 404, 148, 395, 160, 380, 168, 369, 186, 368, 210, 376, 211, 381, 222, 378, 234, 361, 241, 358, 254, 359, 264, 351, 281, 338, 282, 333, 293, 325, 292, 323, 286, 321, 280, 321, 276, 325, 272, 318, 258, 319, 251, 317, 234, 321, 235, 330, 205, 328, 196, 334, 189, 336, 154, 347, 152, 345, 145, 356, 133, 354, 120, 358, 117, 373, 82, 382, 85, 380, 74, 392, 75, 393, 71, 410, 82)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/SWE")
 terrain_type = 2
 
-[node name="NWY" type="Polygon2D" parent="Provinces"]
+[node name="NWY" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(317, 234, 321, 235, 330, 205, 328, 196, 334, 189, 336, 154, 347, 152, 345, 145, 356, 133, 354, 120, 358, 117, 373, 82, 382, 85, 380, 74, 392, 75, 393, 71, 398, 63, 409, 72, 425, 71, 426, 57, 436, 56, 446, 63, 444, 67, 447, 71, 457, 56, 450, 55, 455, 48, 453, 44, 442, 38, 440, 46, 437, 39, 434, 36, 431, 44, 427, 39, 421, 49, 421, 39, 416, 39, 411, 45, 394, 51, 373, 63, 368, 74, 357, 87, 356, 97, 349, 99, 336, 129, 319, 152, 309, 155, 304, 164, 297, 163, 272, 178, 273, 185, 268, 192, 266, 208, 268, 214, 264, 221, 266, 232, 277, 241, 283, 242, 306, 232, 311, 222)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/NWY")
 terrain_type = 2
 
-[node name="DEN" type="Polygon2D" parent="Provinces"]
+[node name="DEN" type="Polygon2D" parent="Provinces" node_paths=PackedStringArray("supply_center")]
 polygon = PackedVector2Array(321, 280, 323, 286, 319, 288, 320, 293, 312, 300, 306, 294, 292, 294, 281, 293, 280, 285, 282, 273, 285, 258, 302, 257, 306, 255, 307, 270, 306, 277, 310, 280, 317, 279)
 script = ExtResource("2_0x21u")
-supply_center = true
+supply_center = NodePath("../../Supply_Centers/DEN")
 terrain_type = 2
 
 [node name="Polygon2D" type="Polygon2D" parent="Provinces/DEN"]
@@ -423,13 +424,13 @@ polygon = PackedVector2Array(0, 315, 0, 1, 170, 1, 171, 204, 161, 210, 160, 218,
 script = ExtResource("2_0x21u")
 terrain_type = 1
 
-[node name="Control" type="Control" parent="."]
+[node name="Names" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BRE" type="Label" parent="Control"]
+[node name="BRE" type="Label" parent="Names"]
 layout_mode = 0
 offset_left = 149.0
 offset_top = 388.0
@@ -439,7 +440,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BRE"
 
-[node name="PIC" type="Label" parent="Control"]
+[node name="PIC" type="Label" parent="Names"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 365.0
@@ -449,7 +450,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "PIC"
 
-[node name="PAR" type="Label" parent="Control"]
+[node name="PAR" type="Label" parent="Names"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 404.0
@@ -459,7 +460,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "PAR"
 
-[node name="GAS" type="Label" parent="Control"]
+[node name="GAS" type="Label" parent="Names"]
 layout_mode = 0
 offset_left = 149.0
 offset_top = 452.0
@@ -469,7 +470,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "GAS"
 
-[node name="MAR" type="Label" parent="Control"]
+[node name="MAR" type="Label" parent="Names"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = 466.0
@@ -479,7 +480,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "MAR"
 
-[node name="BUR" type="Label" parent="Control"]
+[node name="BUR" type="Label" parent="Names"]
 layout_mode = 0
 offset_left = 211.0
 offset_top = 418.0
@@ -489,7 +490,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BUR"
 
-[node name="BEL" type="Label" parent="Control"]
+[node name="BEL" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 362.0
 offset_right = 257.0
@@ -498,7 +500,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BEL"
 
-[node name="HOL" type="Label" parent="Control"]
+[node name="HOL" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 242.0
 offset_top = 325.0
 offset_right = 276.0
@@ -508,7 +511,8 @@ theme_override_font_sizes/font_size = 8
 text = "HOL
 "
 
-[node name="LON" type="Label" parent="Control"]
+[node name="LON" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 182.0
 offset_top = 316.0
 offset_right = 216.0
@@ -517,7 +521,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "LON"
 
-[node name="WAL" type="Label" parent="Control"]
+[node name="WAL" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 149.0
 offset_top = 307.0
 offset_right = 183.0
@@ -526,7 +531,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "WAL"
 
-[node name="YOR" type="Label" parent="Control"]
+[node name="YOR" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 176.0
 offset_top = 283.0
 offset_right = 210.0
@@ -535,7 +541,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "YOR"
 
-[node name="LVP" type="Label" parent="Control"]
+[node name="LVP" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 158.0
 offset_top = 257.0
 offset_right = 192.0
@@ -545,7 +552,8 @@ theme_override_font_sizes/font_size = 8
 text = "LVP
 "
 
-[node name="EDI" type="Label" parent="Control"]
+[node name="EDI" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 175.0
 offset_top = 224.0
 offset_right = 209.0
@@ -554,7 +562,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "EDI"
 
-[node name="CLY" type="Label" parent="Control"]
+[node name="CLY" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 151.0
 offset_top = 223.0
 offset_right = 185.0
@@ -563,7 +572,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "CLY"
 
-[node name="RUH" type="Label" parent="Control"]
+[node name="RUH" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 247.0
 offset_top = 370.0
 offset_right = 281.0
@@ -573,7 +583,8 @@ theme_override_font_sizes/font_size = 8
 text = "RUH
 "
 
-[node name="MUN" type="Label" parent="Control"]
+[node name="MUN" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 270.0
 offset_top = 405.0
 offset_right = 304.0
@@ -583,7 +594,8 @@ theme_override_font_sizes/font_size = 8
 text = "MUN
 "
 
-[node name="KIE" type="Label" parent="Control"]
+[node name="KIE" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 274.0
 offset_top = 318.0
 offset_right = 308.0
@@ -593,7 +605,8 @@ theme_override_font_sizes/font_size = 8
 text = "KIE
 "
 
-[node name="BER" type="Label" parent="Control"]
+[node name="BER" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 313.0
 offset_top = 328.0
 offset_right = 347.0
@@ -602,7 +615,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BER"
 
-[node name="PRU" type="Label" parent="Control"]
+[node name="PRU" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 386.0
 offset_top = 317.0
 offset_right = 420.0
@@ -612,7 +626,8 @@ theme_override_font_sizes/font_size = 8
 text = "PRU
 "
 
-[node name="SIL" type="Label" parent="Control"]
+[node name="SIL" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 349.0
 offset_top = 365.0
 offset_right = 383.0
@@ -622,7 +637,8 @@ theme_override_font_sizes/font_size = 8
 text = "SIL
 "
 
-[node name="TYR" type="Label" parent="Control"]
+[node name="TYR" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 292.0
 offset_top = 429.0
 offset_right = 326.0
@@ -631,7 +647,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "TYR"
 
-[node name="BOH" type="Label" parent="Control"]
+[node name="BOH" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 324.0
 offset_top = 391.0
 offset_right = 358.0
@@ -640,7 +657,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BOH"
 
-[node name="GAL" type="Label" parent="Control"]
+[node name="GAL" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 408.0
 offset_top = 387.0
 offset_right = 442.0
@@ -649,7 +667,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "GAL"
 
-[node name="VIE" type="Label" parent="Control"]
+[node name="VIE" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 354.0
 offset_top = 418.0
 offset_right = 388.0
@@ -658,7 +677,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "VIE"
 
-[node name="TRI" type="Label" parent="Control"]
+[node name="TRI" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 352.0
 offset_top = 480.0
 offset_right = 386.0
@@ -667,7 +687,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "TRI"
 
-[node name="BUD" type="Label" parent="Control"]
+[node name="BUD" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 403.0
 offset_top = 441.0
 offset_right = 437.0
@@ -676,7 +697,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BUD"
 
-[node name="RUM" type="Label" parent="Control"]
+[node name="RUM" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 472.0
 offset_top = 469.0
 offset_right = 506.0
@@ -685,7 +707,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "RUM"
 
-[node name="BUL" type="Label" parent="Control"]
+[node name="BUL" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 453.0
 offset_top = 503.0
 offset_right = 487.0
@@ -694,7 +717,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BUL"
 
-[node name="SER" type="Label" parent="Control"]
+[node name="SER" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 401.0
 offset_top = 510.0
 offset_right = 435.0
@@ -703,7 +727,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "SER"
 
-[node name="ALB" type="Label" parent="Control"]
+[node name="ALB" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 382.0
 offset_top = 521.0
 offset_right = 416.0
@@ -712,7 +737,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "ALB"
 
-[node name="GRE" type="Label" parent="Control"]
+[node name="GRE" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 402.0
 offset_top = 556.0
 offset_right = 436.0
@@ -721,7 +747,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "GRE"
 
-[node name="CON" type="Label" parent="Control"]
+[node name="CON" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 501.0
 offset_top = 549.0
 offset_right = 535.0
@@ -730,7 +757,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "CON"
 
-[node name="BLA" type="Label" parent="Control"]
+[node name="BLA" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 574.0
 offset_top = 473.0
 offset_right = 608.0
@@ -739,7 +767,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "BLA"
 
-[node name="ANK" type="Label" parent="Control"]
+[node name="ANK" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 514.0
 offset_right = 624.0
@@ -748,7 +777,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "ANK"
 
-[node name="ARM" type="Label" parent="Control"]
+[node name="ARM" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 673.0
 offset_top = 528.0
 offset_right = 707.0
@@ -757,7 +787,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "ARM"
 
-[node name="SYR" type="Label" parent="Control"]
+[node name="SYR" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 656.0
 offset_top = 607.0
 offset_right = 690.0
@@ -766,7 +797,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "SYR"
 
-[node name="SMY" type="Label" parent="Control"]
+[node name="SMY" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 530.0
 offset_top = 579.0
 offset_right = 564.0
@@ -775,7 +807,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "SMY"
 
-[node name="EAS" type="Label" parent="Control"]
+[node name="EAS" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 525.0
 offset_top = 624.0
 offset_right = 559.0
@@ -784,7 +817,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "EAS"
 
-[node name="AEG" type="Label" parent="Control"]
+[node name="AEG" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 453.0
 offset_top = 579.0
 offset_right = 487.0
@@ -793,7 +827,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "AEG"
 
-[node name="ION" type="Label" parent="Control"]
+[node name="ION" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 362.0
 offset_top = 589.0
 offset_right = 396.0
@@ -802,7 +837,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "ION"
 
-[node name="ADR" type="Label" parent="Control"]
+[node name="ADR" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 357.0
 offset_top = 520.0
 offset_right = 391.0
@@ -811,7 +847,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "ADR"
 
-[node name="VEN" type="Label" parent="Control"]
+[node name="VEN" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 279.0
 offset_top = 461.0
 offset_right = 313.0
@@ -820,7 +857,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "VEN"
 
-[node name="PIE" type="Label" parent="Control"]
+[node name="PIE" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 249.0
 offset_top = 461.0
 offset_right = 283.0
@@ -829,7 +867,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "PIE"
 
-[node name="TUS" type="Label" parent="Control"]
+[node name="TUS" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 275.0
 offset_top = 482.0
 offset_right = 309.0
@@ -838,7 +877,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "TUS"
 
-[node name="ROM" type="Label" parent="Control"]
+[node name="ROM" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 296.0
 offset_top = 517.0
 offset_right = 330.0
@@ -847,7 +887,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "ROM"
 
-[node name="APU" type="Label" parent="Control"]
+[node name="APU" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 335.0
 offset_top = 534.0
 offset_right = 369.0
@@ -856,7 +897,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "APU"
 
-[node name="NAP" type="Label" parent="Control"]
+[node name="NAP" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 339.0
 offset_top = 559.0
 offset_right = 373.0
@@ -865,7 +907,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "NAP"
 
-[node name="TYS" type="Label" parent="Control"]
+[node name="TYS" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 284.0
 offset_top = 561.0
 offset_right = 318.0
@@ -874,7 +917,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "TYS"
 
-[node name="TUN" type="Label" parent="Control"]
+[node name="TUN" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 241.0
 offset_top = 631.0
 offset_right = 275.0
@@ -883,7 +927,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "TUN"
 
-[node name="NAF" type="Label" parent="Control"]
+[node name="NAF" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 147.0
 offset_top = 608.0
 offset_right = 181.0
@@ -892,7 +937,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "NAF"
 
-[node name="WES" type="Label" parent="Control"]
+[node name="WES" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 186.0
 offset_top = 557.0
 offset_right = 220.0
@@ -900,3 +946,343 @@ offset_bottom = 580.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 8
 text = "WES"
+
+[node name="LYO" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 518.0
+offset_right = 231.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "LYO"
+
+[node name="SPA" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 510.0
+offset_right = 132.0
+offset_bottom = 533.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "SPA"
+
+[node name="POR" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 498.0
+offset_right = 58.0
+offset_bottom = 521.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "POR"
+
+[node name="MAO" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 400.0
+offset_right = 93.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "MAO"
+
+[node name="NAO" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 131.0
+offset_right = 109.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "NAO"
+
+[node name="IRI" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 302.0
+offset_right = 142.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "IRI"
+
+[node name="ENG" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 343.0
+offset_right = 191.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "ENG"
+
+[node name="NTH" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 256.0
+offset_right = 255.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "NTH"
+
+[node name="HEL" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 296.0
+offset_right = 288.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "HEL"
+
+[node name="DEN" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 263.0
+offset_right = 322.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "DEN"
+
+[node name="SKA" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 244.0
+offset_right = 329.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "SKA"
+
+[node name="BAL" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 292.0
+offset_right = 390.0
+offset_bottom = 315.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "BAL"
+
+[node name="BOT" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 193.0
+offset_right = 412.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "BOT"
+
+[node name="SWE" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 187.0
+offset_right = 381.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "SWE"
+
+[node name="NWY" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 193.0
+offset_right = 323.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "NWY"
+
+[node name="NWG" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 72.0
+offset_right = 288.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "NWG"
+
+[node name="BAR" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 8.0
+offset_right = 542.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "BAR"
+
+[node name="STP" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 163.0
+offset_right = 563.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "STP
+"
+
+[node name="FIN" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 176.0
+offset_right = 465.0
+offset_bottom = 199.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "FIN
+"
+
+[node name="LVN" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 290.0
+offset_right = 470.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "LVN
+"
+
+[node name="MOS" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 296.0
+offset_right = 563.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "MOS
+"
+
+[node name="UKR" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 382.0
+offset_right = 516.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "UKR
+"
+
+[node name="SEV" type="Label" parent="Names"]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 394.0
+offset_right = 655.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "SEV
+"
+
+[node name="Supply_Centers" type="Node2D" parent="."]
+
+[node name="EDI" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(177, 252)
+
+[node name="LVP" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(166, 296)
+
+[node name="LON" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(186, 334)
+
+[node name="BEL" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(214, 352)
+
+[node name="HOL" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(236, 328)
+
+[node name="BRE" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(122, 371)
+
+[node name="PAR" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(199, 385)
+
+[node name="MAR" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(214, 480)
+
+[node name="SPA" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(92, 498)
+
+[node name="POR" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(18, 500)
+
+[node name="TUN" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(253, 609)
+
+[node name="NAP" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(321, 541)
+
+[node name="ROM" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(290, 510)
+
+[node name="VEN" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(300, 456)
+
+[node name="MUN" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(297, 414)
+
+[node name="BER" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(323, 343)
+
+[node name="KIE" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(293, 320)
+
+[node name="DEN" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(313, 290)
+
+[node name="SWE" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(372, 226)
+
+[node name="NWY" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(311, 216)
+
+[node name="STP" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(481, 216)
+
+[node name="MOS" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(554, 270)
+
+[node name="SEV" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(556, 455)
+
+[node name="WAR" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(398, 348)
+
+[node name="VIE" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(346, 419)
+
+[node name="BUD" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(375, 433)
+
+[node name="TRI" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(326, 456)
+
+[node name="SER" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(395, 483)
+
+[node name="BUL" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(435, 512)
+
+[node name="RUM" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(462, 476)
+
+[node name="GRE" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(434, 584)
+
+[node name="CON" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(494, 530)
+
+[node name="SMY" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(488, 577)
+
+[node name="ANK" parent="Supply_Centers" instance=ExtResource("4_g23px")]
+position = Vector2(555, 541)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d201vodw6pfgj"]
+
+[ext_resource type="Script" path="res://supply_center/supply_center.gd" id="1_j0whu"]
+
+[node name="supply_center" type="Polygon2D"]
+position = Vector2(-5.96046e-08, -5.96046e-08)
+scale = Vector2(9.81874, 9.81874)
+polygon = PackedVector2Array(-0.407384, -0.407384, 0.407384, -0.407384, 0.407384, 0.407384, -0.407384, 0.407384)
+script = ExtResource("1_j0whu")
