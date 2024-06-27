@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs1gydhmgfhe1"]
+
+[ext_resource type="Script" path="res://province/Province.gd" id="1_snqxb"]
+
+[node name="Province" type="Polygon2D"]
+script = ExtResource("1_snqxb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
