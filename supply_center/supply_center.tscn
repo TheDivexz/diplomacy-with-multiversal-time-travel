@@ -7,3 +7,8 @@ position = Vector2(-5.96046e-08, -5.96046e-08)
 scale = Vector2(9.81874, 9.81874)
 polygon = PackedVector2Array(-0.407384, -0.407384, 0.407384, -0.407384, 0.407384, 0.407384, -0.407384, 0.407384)
 script = ExtResource("1_j0whu")
+
+[node name="Line2D" type="Line2D" parent="."]
+closed = true
+width = 0.11
+default_color = Color(0, 0, 0, 1)

@@ -11,256 +11,367 @@ script = ExtResource("1_2kr66")
 
 [node name="BRE" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(147, 418, 168, 420, 168, 388, 173, 368, 166, 367, 164, 360, 157, 357, 157, 376, 144, 373, 140, 367, 118, 366, 115, 371, 118, 378, 125, 379, 142, 397, 141, 404, 142, 412)
+full_name = "Brest"
 supply_center = NodePath("../../Supply_Centers/BRE")
 terrain_type = 2
-neighbors = [NodePath(""), NodePath(""), null, NodePath(""), NodePath("")]
+neighbors = [NodePath("../ENG"), NodePath("../PIC"), NodePath("../PAR"), NodePath("../GAS"), NodePath("../MAO")]
 
-[node name="GAS" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="GAS" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(147, 418, 139, 440, 141, 443, 129, 460, 130, 469, 154, 480, 155, 477, 163, 480, 171, 464, 181, 457, 193, 455, 188, 446, 190, 442, 182, 438, 179, 431, 171, 429, 168, 420)
+full_name = "Gascony"
 terrain_type = 2
+neighbors = [NodePath("../BRE"), NodePath("../PAR"), NodePath("../BUR"), NodePath("../MAR"), NodePath("../SPA"), NodePath("../MAO")]
 
-[node name="MAR" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="MAR" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(163, 480, 177, 492, 182, 489, 182, 481, 195, 475, 203, 481, 215, 486, 229, 485, 243, 479, 234, 472, 235, 463, 231, 460, 238, 456, 235, 449, 238, 445, 234, 437, 227, 443, 223, 440, 205, 439, 205, 449, 199, 456, 193, 455, 181, 457, 171, 464)
+full_name = "Marseille"
 supply_center = NodePath("../../Supply_Centers/MAR")
 terrain_type = 2
+neighbors = [NodePath("../BUR"), NodePath("../PIE"), NodePath("../LYO"), NodePath("../SPA"), NodePath("../GAS")]
 
-[node name="BUR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="BUR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(221, 372, 236, 381, 235, 390, 243, 399, 245, 406, 240, 423, 223, 440, 205, 439, 205, 449, 199, 456, 193, 455, 188, 446, 190, 442, 182, 438, 179, 431, 213, 396, 216, 383)
+full_name = "Burgandy"
+neighbors = [NodePath("../BEL"), NodePath("../RUH"), NodePath("../MUN"), NodePath("../MAR"), NodePath("../GAS"), NodePath("../PAR"), NodePath("../PIC")]
 
-[node name="PAR" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="PAR" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(170, 379, 183, 382, 190, 382, 198, 378, 216, 383, 213, 396, 179, 431, 171, 429, 168, 420, 168, 388)
+full_name = "Paris"
 supply_center = NodePath("../../Supply_Centers/PAR")
+neighbors = [NodePath("../PIC"), NodePath("../BUR"), NodePath("../GAS"), NodePath("../BRE")]
 
-[node name="PIC" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="PIC" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(173, 368, 178, 369, 176, 363, 194, 358, 212, 363, 221, 372, 216, 383, 198, 378, 190, 382, 183, 382, 170, 379)
+full_name = "Picardy"
 terrain_type = 2
+neighbors = [NodePath("../BEL"), NodePath("../BUR"), NodePath("../PAR"), NodePath("../BRE"), NodePath("../ENG")]
 
-[node name="BEL" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="BEL" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(194, 358, 212, 363, 221, 372, 236, 381, 242, 375, 239, 363, 235, 358, 237, 352, 223, 349, 220, 345, 199, 347)
+full_name = "Belgium"
 supply_center = NodePath("../../Supply_Centers/BEL")
 terrain_type = 2
+neighbors = [NodePath("../NTH"), NodePath("../HOL"), NodePath("../RUH"), NodePath("../BUR"), NodePath("../PIC"), NodePath("../ENG")]
 
-[node name="HOL" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="HOL" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(220, 345, 223, 349, 237, 352, 235, 358, 239, 363, 242, 361, 246, 348, 247, 342, 253, 344, 259, 337, 261, 323, 260, 317, 243, 316, 238, 322, 236, 322, 236, 318, 228, 332, 227, 334)
+full_name = "Holland"
 supply_center = NodePath("../../Supply_Centers/HOL")
 terrain_type = 2
+neighbors = [NodePath("../NTH"), NodePath("../HEL"), NodePath("../KIE"), NodePath("../RUH"), NodePath("../BEL")]
 
-[node name="LON" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="LON" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(198, 339, 193, 341, 184, 343, 169, 340, 167, 323, 173, 319, 176, 312, 191, 310, 193, 311, 197, 309, 203, 311, 205, 316, 203, 326, 190, 337)
+full_name = "London"
 supply_center = NodePath("../../Supply_Centers/LON")
 terrain_type = 2
+neighbors = [NodePath("../YOR"), NodePath("../NTH"), NodePath("../ENG"), NodePath("../WAL")]
 
-[node name="WAL" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="WAL" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(176, 312, 173, 304, 165, 302, 147, 302, 132, 306, 133, 314, 137, 314, 146, 318, 150, 325, 141, 324, 129, 331, 116, 335, 128, 337, 138, 340, 143, 335, 154, 339, 169, 340, 167, 323, 173, 319)
+full_name = "Wales"
 terrain_type = 2
+neighbors = [NodePath("../LVP"), NodePath("../YOR"), NodePath("../LON"), NodePath("../ENG"), NodePath("../IRI")]
 
-[node name="LVP" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="LVP" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(147, 302, 165, 302, 173, 304, 174, 285, 178, 276, 178, 263, 167, 250, 166, 246, 159, 247, 159, 250, 150, 257, 150, 262, 157, 264, 159, 277, 155, 288, 152, 288, 139, 296, 145, 295)
+full_name = "Liverpool"
 supply_center = NodePath("../../Supply_Centers/LVP")
 terrain_type = 2
+neighbors = [NodePath("../CLY"), NodePath("../EDI"), NodePath("../YOR"), NodePath("../WAL"), NodePath("../IRI"), NodePath("../NAO")]
 
-[node name="YOR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="YOR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(178, 263, 188, 261, 188, 276, 194, 284, 196, 290, 195, 306, 191, 310, 176, 312, 173, 304, 174, 285, 178, 276)
+full_name = "York"
 terrain_type = 2
+neighbors = [NodePath("../EDI"), NodePath("../NTH"), NodePath("../LON"), NodePath("../WAL"), NodePath("../LVP")]
 
-[node name="EDI" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="EDI" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(166, 246, 167, 250, 178, 263, 188, 261, 185, 251, 176, 247, 190, 242, 196, 233, 197, 227, 182, 223, 175, 224, 168, 231)
+full_name = "Edinbrugh"
 supply_center = NodePath("../../Supply_Centers/EDI")
 terrain_type = 2
+neighbors = [NodePath("../NWG"), NodePath("../NTH"), NodePath("../YOR"), NodePath("../LVP"), NodePath("../CLY")]
 
-[node name="CLY" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="CLY" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(159, 247, 166, 246, 168, 231, 175, 224, 177, 217, 185, 214, 186, 209, 171, 204, 161, 210, 160, 218, 148, 227, 150, 240)
+full_name = "Clyde"
 terrain_type = 2
+neighbors = [NodePath("../NWG"), NodePath("../EDI"), NodePath("../LVP"), NodePath("../NAO")]
 
-[node name="MUN" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="MUN" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(241, 419, 245, 406, 243, 399, 252, 396, 273, 371, 280, 371, 303, 357, 331, 352, 327, 362, 331, 370, 320, 376, 306, 375, 304, 379, 308, 395, 318, 399, 323, 410, 317, 417, 310, 417, 312, 426, 308, 424, 287, 428, 283, 425, 279, 426, 269, 422, 267, 418, 259, 417, 255, 421)
+full_name = "Munich"
 supply_center = NodePath("../../Supply_Centers/MUN")
+neighbors = [NodePath("../KIE"), NodePath("../BUR"), NodePath("../SIL"), NodePath("../BOH"), NodePath("../TYR"), NodePath("../BUR"), NodePath("../RUH")]
 
-[node name="RUH" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="RUH" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(280, 371, 277, 364, 267, 355, 246, 348, 242, 361, 239, 363, 242, 375, 236, 381, 235, 390, 243, 399, 252, 396, 273, 371)
+full_name = "Ruhr"
+neighbors = [NodePath("../HOL"), NodePath("../KIE"), NodePath("../MUN"), NodePath("../BUR"), NodePath("../BEL")]
 
-[node name="KIE" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="KIE" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(260, 317, 264, 315, 270, 316, 270, 319, 281, 314, 281, 310, 282, 303, 279, 296, 281, 293, 292, 294, 294, 303, 295, 307, 299, 310, 300, 316, 306, 317, 306, 326, 301, 331, 304, 338, 300, 341, 303, 357, 280, 371, 277, 364, 267, 355, 246, 348, 247, 342, 253, 344, 259, 337, 261, 323)
+full_name = "Kiel"
 supply_center = NodePath("../../Supply_Centers/KIE")
 terrain_type = 2
+neighbors = [NodePath("../DEN"), NodePath("../BAL"), NodePath("../BER"), NodePath("../MUN"), NodePath("../RUH"), NodePath("../HOL"), NodePath("../HEL")]
 
 [node name="Polygon2D" type="Polygon2D" parent="Provinces/KIE"]
 color = Color(0.6, 0.8, 1, 1)
 polygon = PackedVector2Array(281, 311, 281, 314, 295, 307, 294, 303)
 
-[node name="BER" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="BER" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(306, 317, 306, 326, 301, 331, 304, 338, 300, 341, 303, 357, 331, 352, 341, 346, 342, 341, 336, 334, 338, 317, 329, 316, 330, 308, 322, 307)
+full_name = "Berlin"
 supply_center = NodePath("../../Supply_Centers/BER")
 terrain_type = 2
+neighbors = [NodePath("../BAL"), NodePath("../PRU"), NodePath("../SIL"), NodePath("../MUN"), NodePath("../KIE")]
 
-[node name="PRU" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="PRU" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(338, 317, 353, 315, 361, 307, 375, 306, 377, 316, 384, 315, 388, 304, 396, 302, 401, 292, 399, 286, 399, 281, 407, 289, 410, 301, 417, 300, 422, 305, 420, 324, 413, 330, 397, 333, 393, 331, 375, 337, 373, 345, 368, 349, 341, 346, 342, 341, 336, 334)
+full_name = "Prussia"
 terrain_type = 2
+neighbors = [NodePath("../BAL"), NodePath("../LVN"), NodePath("../WAR"), NodePath("../SIL"), NodePath("../BER")]
 
-[node name="SIL" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="SIL" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(331, 370, 342, 371, 358, 385, 361, 383, 369, 391, 374, 392, 379, 389, 383, 380, 375, 377, 371, 371, 368, 349, 341, 346, 331, 352, 327, 362)
+full_name = "Silesia"
+neighbors = [NodePath("../PRU"), NodePath("../WAR"), NodePath("../GAL"), NodePath("../BOH"), NodePath("../MUN"), NodePath("../BER")]
 
-[node name="BOH" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="BOH" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(304, 379, 306, 375, 320, 376, 331, 370, 342, 371, 358, 385, 361, 383, 369, 391, 370, 400, 364, 401, 349, 399, 339, 402, 336, 411, 323, 410, 318, 399, 308, 395)
+full_name = "Bohemia"
+neighbors = [NodePath("../MUN"), NodePath("../SIL"), NodePath("../VIE"), NodePath("../TYR")]
 
-[node name="TYR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="TYR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(269, 422, 269, 431, 277, 435, 282, 442, 280, 447, 283, 451, 288, 457, 294, 454, 298, 447, 308, 443, 318, 445, 333, 444, 338, 438, 339, 417, 336, 411, 323, 410, 317, 417, 310, 417, 312, 426, 308, 424, 287, 428, 283, 425, 279, 426)
+full_name = "Tyrolia"
+neighbors = [NodePath("../MUN"), NodePath("../BOH"), NodePath("../VIE"), NodePath("../TRI"), NodePath("../VEN"), NodePath("../PIE")]
 
-[node name="VIE" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="VIE" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(349, 399, 364, 401, 370, 400, 379, 399, 388, 403, 388, 403, 386, 408, 384, 410, 370, 427, 358, 432, 354, 441, 344, 444, 338, 438, 339, 417, 336, 411, 339, 402)
+full_name = "Vienna"
 supply_center = NodePath("../../Supply_Centers/VIE")
+neighbors = [NodePath("../BOH"), NodePath("../GAL"), NodePath("../BUD"), NodePath("../TRI"), NodePath("../TYR")]
 
-[node name="GAL" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="GAL" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(383, 380, 392, 380, 396, 383, 407, 377, 410, 372, 416, 374, 422, 379, 430, 377, 436, 373, 441, 377, 443, 383, 460, 390, 465, 408, 464, 415, 465, 428, 453, 433, 442, 420, 435, 418, 434, 415, 424, 407, 414, 405, 403, 400, 388, 403, 379, 399, 370, 400, 369, 391, 374, 392, 379, 389)
+full_name = "Galicia"
+neighbors = [NodePath("../WAR"), NodePath("../UKR"), NodePath("../RUM"), NodePath("../BUD"), NodePath("../VIE"), NodePath("../BOH"), NodePath("../SIL")]
 
-[node name="BUD" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="BUD" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(388, 403, 403, 400, 414, 405, 424, 407, 434, 415, 435, 418, 442, 420, 453, 433, 454, 440, 462, 444, 467, 456, 461, 463, 445, 463, 422, 468, 420, 475, 414, 476, 393, 472, 389, 475, 385, 472, 382, 472, 372, 470, 369, 458, 358, 454, 354, 441, 358, 432, 370, 427, 384, 410, 386, 408)
+full_name = "Budapest"
 supply_center = NodePath("../../Supply_Centers/BUD")
+neighbors = [NodePath("../GAL"), NodePath("../RUM"), NodePath("../SER"), NodePath("../TRI"), NodePath("../VIE")]
 
-[node name="TRI" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="TRI" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(318, 445, 333, 444, 338, 438, 344, 444, 354, 441, 358, 454, 369, 458, 372, 470, 382, 472, 380, 479, 381, 488, 376, 494, 380, 504, 388, 514, 380, 513, 381, 523, 352, 502, 333, 482, 329, 463, 325, 462, 320, 472, 316, 464, 317, 460, 321, 448)
+full_name = "Trieste"
 supply_center = NodePath("../../Supply_Centers/TRI")
 terrain_type = 2
+neighbors = [NodePath("../TYR"), NodePath("../VIE"), NodePath("../BUD"), NodePath("../SER"), NodePath("../ALB"), NodePath("../ADR"), NodePath("../VEN")]
 
-[node name="VEN" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="VEN" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(321, 448, 318, 445, 308, 443, 298, 447, 294, 454, 288, 457, 283, 451, 268, 465, 271, 473, 276, 478, 291, 482, 303, 500, 315, 515, 320, 510, 313, 488, 299, 480, 300, 462, 311, 458, 317, 460)
+full_name = "Venice"
 supply_center = NodePath("../../Supply_Centers/VEN")
 terrain_type = 2
+neighbors = [NodePath("../TYR"), NodePath("../TRI"), NodePath("../ADR"), NodePath("../APU"), NodePath("../ROM"), NodePath("../TUS"), NodePath("../PIE")]
 
-[node name="PIE" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="PIE" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(238, 445, 245, 446, 255, 444, 261, 449, 264, 443, 280, 447, 283, 451, 268, 465, 271, 473, 268, 478, 255, 473, 243, 479, 234, 472, 235, 463, 231, 460, 238, 456, 235, 449)
+full_name = "Piedmont"
 terrain_type = 2
+neighbors = [NodePath("../TYR"), NodePath("../VEN"), NodePath("../TUS"), NodePath("../LYO"), NodePath("../MAR")]
 
-[node name="TUS" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="TUS" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(268, 478, 271, 473, 276, 478, 291, 482, 303, 500, 288, 504, 284, 509, 274, 496)
+full_name = "Tuscany"
 terrain_type = 2
+neighbors = [NodePath("../VEN"), NodePath("../ROM"), NodePath("../TYS"), NodePath("../LYO"), NodePath("../PIE")]
 
-[node name="ROM" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="ROM" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(284, 509, 288, 504, 303, 500, 315, 515, 321, 520, 322, 524, 321, 528, 312, 535, 294, 528, 285, 515)
+full_name = "Rome"
 supply_center = NodePath("../../Supply_Centers/ROM")
 terrain_type = 2
+neighbors = [NodePath("../VEN"), NodePath("../APU"), NodePath("../NAP"), NodePath("../TYS"), NodePath("../TUS")]
 
-[node name="APU" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="APU" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(315, 515, 320, 510, 334, 522, 345, 522, 342, 525, 370, 553, 370, 558, 366, 558, 357, 553, 350, 558, 337, 554, 321, 528, 322, 524, 321, 520)
+full_name = "Apulia"
 terrain_type = 2
+neighbors = [NodePath("../VEN"), NodePath("../ADR"), NodePath("../ION"), NodePath("../NAP"), NodePath("../ROM")]
 
-[node name="NAP" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="NAP" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(312, 535, 321, 528, 337, 554, 350, 558, 358, 566, 354, 577, 340, 593, 334, 592, 333, 589, 338, 578, 334, 561, 317, 546)
+full_name = "Naples"
 supply_center = NodePath("../../Supply_Centers/NAP")
 terrain_type = 2
+neighbors = [NodePath("../ROM"), NodePath("../APU"), NodePath("../ION"), NodePath("../TYS")]
 
-[node name="TUN" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="TUN" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(224, 644, 267, 644, 269, 635, 267, 627, 259, 616, 266, 612, 271, 604, 268, 602, 258, 607, 257, 597, 251, 594, 244, 596, 239, 601, 233, 599, 227, 607)
+full_name = "Tunis"
 supply_center = NodePath("../../Supply_Centers/TUN")
 terrain_type = 2
+neighbors = [NodePath("../TYS"), NodePath("../ION"), NodePath("../NAF"), NodePath("../WES")]
 
-[node name="NAF" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="NAF" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(224, 644, 0, 644, 0, 599, 20, 597, 38, 571, 43, 570, 47, 569, 48, 578, 53, 586, 74, 592, 78, 589, 78, 594, 90, 599, 97, 597, 102, 590, 114, 593, 122, 589, 134, 586, 173, 589, 195, 597, 206, 593, 233, 599, 227, 607)
+full_name = "North Africa"
 terrain_type = 2
+neighbors = [NodePath("../MAO"), NodePath("../WES"), NodePath("../TUN")]
 
-[node name="SPA" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="SPA" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(43, 564, 54, 562, 60, 563, 69, 560, 89, 565, 95, 569, 99, 560, 103, 557, 112, 558, 123, 546, 130, 545, 132, 541, 127, 531, 143, 511, 150, 506, 168, 505, 181, 498, 182, 489, 177, 492, 163, 480, 155, 477, 154, 480, 130, 469, 129, 460, 116, 456, 111, 457, 83, 442, 68, 439, 63, 432, 55, 431, 53, 436, 45, 432, 38, 439, 41, 443, 37, 456, 49, 455, 48, 460, 64, 461, 71, 468, 70, 473, 60, 475, 48, 498, 43, 497, 46, 508, 39, 515, 41, 527, 31, 539, 38, 547, 39, 557)
+full_name = "Spain"
 supply_center = NodePath("../../Supply_Centers/SPA")
 terrain_type = 2
+neighbors = [NodePath("../MAO"), NodePath("../GAS"), NodePath("../MAR"), NodePath("../LYO"), NodePath("../WES"), NodePath("../POR")]
 
-[node name="POR" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="POR" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(37, 456, 49, 455, 48, 460, 64, 461, 71, 468, 70, 473, 60, 475, 48, 498, 43, 497, 46, 508, 39, 515, 41, 527, 31, 539, 22, 540, 9, 532, 15, 523, 14, 518, 17, 508, 15, 507, 11, 499, 16, 491, 20, 492, 35, 468)
+full_name = "Portugal"
 supply_center = NodePath("../../Supply_Centers/POR")
 terrain_type = 2
+neighbors = [NodePath("../MAO"), NodePath("../SPA")]
 
-[node name="RUM" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="RUM" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(464, 415, 473, 416, 476, 429, 487, 433, 486, 441, 491, 460, 504, 458, 505, 465, 497, 471, 495, 488, 486, 484, 472, 484, 465, 486, 458, 492, 449, 490, 439, 492, 432, 488, 426, 490, 422, 485, 420, 475, 422, 468, 445, 463, 461, 463, 467, 456, 462, 444, 454, 440, 453, 433, 465, 428)
+full_name = "Rumania"
 supply_center = NodePath("../../Supply_Centers/RUM")
 terrain_type = 2
+neighbors = [NodePath("../UKR"), NodePath("../SEV"), NodePath("../BLA"), NodePath("../BUL"), NodePath("../SER"), NodePath("../BUD"), NodePath("../GAL")]
 
-[node name="BUL" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="BUL" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(422, 485, 420, 489, 424, 499, 427, 504, 421, 506, 427, 525, 420, 531, 424, 535, 424, 535, 433, 535, 446, 530, 451, 543, 460, 539, 469, 541, 475, 535, 474, 523, 484, 519, 491, 518, 486, 508, 489, 492, 494, 491, 495, 488, 486, 484, 472, 484, 465, 486, 458, 492, 449, 490, 439, 492, 432, 488, 426, 490)
+full_name = "Bulgaria"
 supply_center = NodePath("../../Supply_Centers/BUL")
 terrain_type = 2
+neighbors = [NodePath("../RUM"), NodePath("../BLA"), NodePath("../CON"), NodePath("../AEG"), NodePath("../GRE"), NodePath("../SER")]
 
-[node name="SER" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="SER" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(388, 514, 398, 521, 398, 537, 403, 543, 409, 543, 415, 538, 424, 535, 420, 531, 427, 525, 421, 506, 427, 504, 424, 499, 420, 489, 422, 485, 420, 475, 414, 476, 393, 472, 389, 475, 385, 472, 382, 472, 380, 479, 381, 488, 376, 494, 380, 504)
+full_name = "Serbia"
 supply_center = NodePath("../../Supply_Centers/SER")
+neighbors = [NodePath("../BUD"), NodePath("../RUM"), NodePath("../BUL"), NodePath("../GRE"), NodePath("../ALB"), NodePath("../TRI")]
 
-[node name="ALB" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="ALB" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(381, 523, 380, 513, 388, 514, 398, 521, 398, 537, 403, 543, 403, 550, 390, 561, 385, 553, 385, 553, 381, 550)
+full_name = "Albania"
 terrain_type = 2
+neighbors = [NodePath("../TRI"), NodePath("../SER"), NodePath("../GRE"), NodePath("../ION"), NodePath("../ADR")]
 
-[node name="GRE" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="GRE" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(390, 561, 403, 550, 403, 543, 409, 543, 415, 538, 424, 535, 433, 535, 446, 530, 451, 543, 438, 544, 444, 550, 438, 549, 440, 556, 436, 558, 427, 550, 424, 556, 435, 569, 427, 566, 426, 569, 443, 586, 444, 594, 434, 591, 435, 600, 427, 599, 432, 618, 424, 612, 422, 617, 414, 608, 413, 614, 411, 600, 403, 592, 409, 587, 427, 588, 422, 584, 405, 585, 399, 576, 403, 574, 398, 573)
+full_name = "Greece"
 supply_center = NodePath("../../Supply_Centers/GRE")
 terrain_type = 2
+neighbors = [NodePath("../SER"), NodePath("../BUL"), NodePath("../AEG"), NodePath("../ION"), NodePath("../ALB")]
 
-[node name="CON" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="CON" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(469, 541, 475, 535, 474, 523, 484, 519, 491, 518, 495, 524, 506, 527, 509, 530, 534, 526, 539, 531, 539, 552, 536, 566, 520, 570, 497, 568, 487, 561, 480, 563, 480, 560, 470, 561, 472, 555, 476, 547, 472, 545)
+full_name = "Constantinople"
 supply_center = NodePath("../../Supply_Centers/CON")
 terrain_type = 2
+neighbors = [NodePath("../BLA"), NodePath("../ANK"), NodePath("../SMY"), NodePath("../AEG"), NodePath("../BUL")]
 
 [node name="Polygon2D" type="Polygon2D" parent="Provinces/CON"]
 color = Color(0.6, 0.8, 1, 1)
 polygon = PackedVector2Array(506, 527, 509, 530, 505, 533, 516, 534, 489, 547, 476, 547, 474, 546, 479, 544, 484, 538, 501, 533)
 
-[node name="ANK" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="ANK" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(534, 526, 541, 515, 553, 504, 577, 499, 588, 507, 591, 505, 598, 508, 634, 503, 638, 505, 641, 518, 638, 530, 629, 532, 611, 530, 585, 553, 577, 555, 564, 553, 544, 566, 536, 566, 539, 552, 539, 531)
+full_name = "Ankara"
 supply_center = NodePath("../../Supply_Centers/ANK")
 terrain_type = 2
+neighbors = [NodePath("../BLA"), NodePath("../ARM"), NodePath("../SMY"), NodePath("../CON")]
 
-[node name="SMY" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="SMY" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(480, 563, 487, 561, 497, 568, 520, 570, 536, 566, 544, 566, 564, 553, 577, 555, 585, 553, 611, 530, 629, 532, 638, 530, 640, 538, 647, 543, 648, 552, 639, 557, 627, 560, 617, 569, 609, 586, 606, 585, 598, 596, 588, 592, 581, 606, 565, 611, 558, 608, 547, 599, 536, 600, 534, 612, 521, 615, 515, 608, 507, 606, 501, 610, 501, 602, 491, 603, 487, 588, 480, 584, 480, 573, 483, 570)
+full_name = "Smyrna"
 supply_center = NodePath("../../Supply_Centers/SMY")
 terrain_type = 2
+neighbors = [NodePath("../CON"), NodePath("../ANK"), NodePath("../ARM"), NodePath("../SYR"), NodePath("../EAS"), NodePath("../AEG")]
 
-[node name="ARM" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="ARM" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(638, 505, 656, 492, 678, 509, 684, 506, 694, 508, 701, 507, 701, 568, 672, 550, 648, 552, 647, 543, 640, 538, 638, 530, 641, 518)
+full_name = "Armenia"
 terrain_type = 2
+neighbors = [NodePath("../SEV"), NodePath("../BLA"), NodePath("../ANK"), NodePath("../SMY"), NodePath("../SYR")]
 
-[node name="SYR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="SYR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(701, 568, 701, 644, 608, 644, 612, 616, 605, 610, 604, 597, 609, 586, 617, 569, 627, 560, 639, 557, 648, 552, 672, 550)
+full_name = "Syria"
 terrain_type = 2
+neighbors = [NodePath("../EAS"), NodePath("../SMY"), NodePath("../ARM")]
 
-[node name="SEV" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="SEV" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(504, 458, 491, 460, 486, 441, 487, 433, 497, 429, 499, 415, 512, 403, 529, 398, 536, 354, 541, 349, 539, 340, 549, 333, 569, 340, 581, 323, 593, 329, 606, 331, 614, 326, 632, 327, 638, 351, 649, 351, 655, 370, 687, 380, 701, 380, 701, 507, 694, 508, 684, 506, 678, 509, 656, 492, 659, 480, 652, 470, 637, 468, 608, 454, 595, 453, 587, 445, 588, 441, 593, 442, 598, 427, 595, 427, 592, 421, 606, 408, 605, 405, 579, 419, 558, 435, 568, 446, 583, 442, 583, 448, 572, 452, 569, 456, 562, 458, 559, 466, 549, 462, 549, 456, 539, 452, 543, 443, 550, 441, 547, 439, 535, 441, 528, 437, 530, 434, 528, 432, 513, 436)
+full_name = "Sevestapol"
 supply_center = NodePath("../../Supply_Centers/SEV")
 terrain_type = 2
+neighbors = [NodePath("../MOS"), NodePath("../UKR"), NodePath("../RUM"), NodePath("../BLA"), NodePath("../ARM")]
 
-[node name="UKR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="UKR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(441, 377, 444, 356, 449, 353, 525, 336, 539, 340, 541, 349, 536, 354, 529, 398, 512, 403, 499, 415, 497, 429, 487, 433, 476, 429, 473, 416, 464, 415, 465, 408, 460, 390, 443, 383)
+full_name = "Ukraine"
+neighbors = [NodePath("../MOS"), NodePath("../SEV"), NodePath("../RUM"), NodePath("../GAL"), NodePath("../WAR")]
 
-[node name="WAR" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="WAR" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(420, 324, 428, 326, 437, 334, 437, 334, 444, 356, 441, 377, 436, 373, 430, 377, 422, 379, 416, 374, 410, 372, 407, 377, 396, 383, 392, 380, 383, 380, 375, 377, 371, 371, 368, 349, 373, 345, 375, 337, 393, 331, 397, 333, 413, 330)
+full_name = "Warsaw"
 supply_center = NodePath("../../Supply_Centers/WAR")
+neighbors = [NodePath("../PRU"), NodePath("../LVN"), NodePath("../MOS"), NodePath("../UKR"), NodePath("../GAL"), NodePath("../SIL")]
 
-[node name="MOS" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="MOS" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(701, 380, 701, 136, 689, 152, 660, 165, 649, 184, 614, 189, 593, 195, 562, 213, 547, 211, 527, 224, 525, 239, 526, 242, 519, 246, 515, 241, 505, 243, 492, 260, 485, 264, 471, 263, 466, 275, 465, 317, 451, 320, 448, 329, 437, 334, 444, 356, 449, 353, 525, 336, 539, 340, 549, 333, 569, 340, 581, 323, 593, 329, 606, 331, 614, 326, 632, 327, 638, 351, 649, 351, 655, 370, 687, 380)
+full_name = "Moscow"
 supply_center = NodePath("../../Supply_Centers/MOS")
+neighbors = [NodePath("../STP"), NodePath("../LVN"), NodePath("../WAR"), NodePath("../UKR"), NodePath("../SEV")]
 
-[node name="LVN" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="LVN" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(399, 281, 407, 289, 410, 301, 417, 300, 422, 305, 420, 324, 428, 326, 437, 334, 448, 329, 451, 320, 465, 317, 466, 275, 471, 263, 466, 250, 454, 237, 440, 238, 428, 236, 425, 233, 420, 235, 423, 242, 428, 246, 429, 255, 434, 262, 429, 264, 421, 263, 413, 254, 402, 264, 399, 280)
+full_name = "Livonia"
 terrain_type = 2
+neighbors = [NodePath("../BOT"), NodePath("../STP"), NodePath("../MOS"), NodePath("../WAR"), NodePath("../PRU"), NodePath("../BAL")]
 
-[node name="STP" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="STP" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(701, 136, 701, 1, 621, 1, 616, 11, 610, 7, 595, 22, 594, 39, 590, 44, 590, 27, 584, 24, 581, 31, 574, 38, 566, 56, 570, 67, 562, 69, 551, 67, 551, 67, 549, 64, 554, 58, 544, 50, 536, 52, 543, 72, 550, 76, 550, 86, 543, 83, 539, 85, 526, 105, 540, 116, 537, 123, 532, 126, 511, 117, 509, 128, 514, 133, 522, 137, 520, 141, 500, 137, 490, 119, 490, 109, 476, 102, 474, 96, 512, 97, 526, 92, 528, 77, 521, 71, 480, 55, 466, 57, 462, 53, 457, 56, 447, 71, 445, 79, 452, 85, 451, 107, 462, 128, 462, 136, 472, 150, 476, 170, 471, 175, 474, 185, 463, 204, 464, 211, 473, 212, 476, 216, 469, 216, 461, 221, 459, 228, 446, 226, 427, 228, 425, 233, 428, 236, 440, 238, 454, 237, 466, 250, 471, 263, 485, 264, 492, 260, 505, 243, 515, 241, 519, 246, 526, 242, 525, 239, 527, 224, 547, 211, 562, 213, 593, 195, 615, 189, 649, 184, 660, 165, 689, 152)
+full_name = "St. Petersburg"
 supply_center = NodePath("../../Supply_Centers/STP")
 terrain_type = 2
+neighbors = [NodePath("../BAR"), NodePath("../NWY"), NodePath("../FIN"), NodePath("../BOT"), NodePath("../LVN"), NodePath("../MOS")]
 
-[node name="FIN" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="FIN" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(463, 204, 474, 185, 471, 175, 476, 170, 472, 150, 462, 136, 462, 128, 451, 107, 452, 85, 445, 79, 447, 71, 444, 67, 446, 63, 436, 56, 426, 57, 425, 71, 409, 72, 398, 63, 393, 71, 410, 82, 417, 124, 423, 125, 428, 139, 421, 140, 413, 158, 397, 174, 399, 185, 403, 190, 400, 205, 401, 212, 411, 214, 420, 220, 443, 213)
+full_name = "Finland"
 terrain_type = 2
+neighbors = [NodePath("../NWY"), NodePath("../STP"), NodePath("../BOT"), NodePath("../SWE")]
 
-[node name="SWE" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="SWE" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(417, 124, 409, 120, 402, 129, 399, 140, 404, 148, 395, 160, 380, 168, 369, 186, 368, 210, 376, 211, 381, 222, 378, 234, 361, 241, 358, 254, 359, 264, 351, 281, 338, 282, 333, 293, 325, 292, 323, 286, 321, 280, 321, 276, 325, 272, 318, 258, 319, 251, 317, 234, 321, 235, 330, 205, 328, 196, 334, 189, 336, 154, 347, 152, 345, 145, 356, 133, 354, 120, 358, 117, 373, 82, 382, 85, 380, 74, 392, 75, 393, 71, 410, 82)
+full_name = "Sweden"
 supply_center = NodePath("../../Supply_Centers/SWE")
 terrain_type = 2
+neighbors = [NodePath("../NWY"), NodePath("../FIN"), NodePath("../BOT"), NodePath("../BAL"), NodePath("../DEN"), NodePath("../SKA")]
 
-[node name="NWY" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="NWY" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(317, 234, 321, 235, 330, 205, 328, 196, 334, 189, 336, 154, 347, 152, 345, 145, 356, 133, 354, 120, 358, 117, 373, 82, 382, 85, 380, 74, 392, 75, 393, 71, 398, 63, 409, 72, 425, 71, 426, 57, 436, 56, 446, 63, 444, 67, 447, 71, 457, 56, 450, 55, 455, 48, 453, 44, 442, 38, 440, 46, 437, 39, 434, 36, 431, 44, 427, 39, 421, 49, 421, 39, 416, 39, 411, 45, 394, 51, 373, 63, 368, 74, 357, 87, 356, 97, 349, 99, 336, 129, 319, 152, 309, 155, 304, 164, 297, 163, 272, 178, 273, 185, 268, 192, 266, 208, 268, 214, 264, 221, 266, 232, 277, 241, 283, 242, 306, 232, 311, 222)
+full_name = "Norway"
 supply_center = NodePath("../../Supply_Centers/NWY")
 terrain_type = 2
+neighbors = [NodePath("../NWG"), NodePath("../BAR"), NodePath("../STP"), NodePath("../FIN"), NodePath("../SWE"), NodePath("../SKA"), NodePath("../NTH")]
 
-[node name="DEN" parent="Provinces" node_paths=PackedStringArray("supply_center") instance=ExtResource("2_31thb")]
+[node name="DEN" parent="Provinces" node_paths=PackedStringArray("supply_center", "neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(321, 280, 323, 286, 319, 288, 320, 293, 312, 300, 306, 294, 292, 294, 281, 293, 280, 285, 282, 273, 285, 258, 302, 257, 306, 255, 307, 270, 306, 277, 310, 280, 317, 279)
+full_name = "Denamrk"
 supply_center = NodePath("../../Supply_Centers/DEN")
 terrain_type = 2
+neighbors = [NodePath("../SKA"), NodePath("../SWE"), NodePath("../BAL"), NodePath("../KIE"), NodePath("../HEL"), NodePath("../NTH")]
 
 [node name="Polygon2D" type="Polygon2D" parent="Provinces/DEN"]
 position = Vector2(350.947, 322.75)
@@ -268,81 +379,119 @@ scale = Vector2(0.36557, 0.36557)
 color = Color(0.6, 0.8, 1, 1)
 polygon = PackedVector2Array(-122.951, -125.147, -112.009, -116.941, -117.48, -105.999, -131.157, -103.263, -122.951, -78.6443, -161.247, -78.6443, -150.306, -103.263)
 
-[node name="BLA" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="BLA" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(506, 527, 509, 530, 534, 526, 541, 515, 553, 504, 577, 499, 588, 507, 591, 505, 598, 508, 634, 503, 638, 505, 656, 492, 659, 480, 652, 470, 637, 468, 608, 454, 595, 453, 587, 445, 588, 441, 593, 442, 598, 427, 595, 427, 592, 421, 606, 408, 605, 405, 579, 419, 558, 435, 568, 446, 583, 442, 583, 448, 572, 452, 569, 456, 562, 458, 559, 466, 549, 462, 549, 456, 539, 452, 543, 443, 550, 441, 547, 439, 535, 441, 528, 437, 530, 434, 528, 432, 513, 436, 504, 458, 505, 465, 497, 471, 495, 488, 494, 491, 489, 492, 486, 508, 491, 518, 495, 524)
+full_name = "Black Sea"
 terrain_type = 1
+neighbors = [NodePath("../SEV"), NodePath("../ARM"), NodePath("../ANK"), NodePath("../CON"), NodePath("../BUL"), NodePath("../RUM")]
 
-[node name="EAS" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="EAS" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(608, 644, 460, 644, 460, 638, 477, 636, 479, 632, 501, 610, 507, 606, 515, 608, 521, 615, 534, 612, 536, 600, 547, 599, 558, 608, 565, 611, 581, 606, 588, 592, 598, 596, 606, 585, 609, 586, 604, 597, 605, 610, 612, 616)
+full_name = "eastern Mediterranean"
 terrain_type = 1
+neighbors = [NodePath("../SMY"), NodePath("../SYR"), NodePath("../ION"), NodePath("../AEG")]
 
-[node name="AEG" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="AEG" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(479, 632, 475, 630, 446, 629, 441, 627, 432, 618, 427, 599, 435, 600, 434, 591, 444, 594, 443, 586, 426, 569, 427, 566, 435, 569, 424, 556, 427, 550, 436, 558, 440, 556, 438, 549, 444, 550, 438, 544, 451, 543, 460, 539, 469, 541, 472, 545, 476, 547, 472, 555, 470, 561, 480, 560, 480, 563, 483, 570, 480, 573, 480, 584, 487, 588, 491, 603, 501, 602, 501, 610)
+full_name = "Aegeon Sea"
 terrain_type = 1
+neighbors = [NodePath("../BUL"), NodePath("../CON"), NodePath("../SMY"), NodePath("../EAS"), NodePath("../ION"), NodePath("../GRE")]
 
-[node name="ION" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="ION" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(267, 644, 460, 644, 460, 638, 441, 634, 437, 630, 441, 627, 432, 618, 424, 612, 422, 617, 414, 608, 413, 614, 411, 600, 403, 592, 409, 587, 427, 588, 422, 584, 405, 585, 399, 576, 403, 574, 398, 573, 390, 561, 385, 553, 370, 553, 370, 558, 366, 558, 357, 553, 350, 558, 358, 566, 354, 577, 340, 593, 334, 592, 333, 589, 328, 589, 328, 591, 325, 600, 323, 613, 314, 612, 297, 598, 284, 591, 271, 604, 266, 612, 259, 616, 267, 627, 269, 635)
+full_name = "Ionian Sea"
 terrain_type = 1
+neighbors = [NodePath("../ADR"), NodePath("../ALB"), NodePath("../GRE"), NodePath("../AEG"), NodePath("../EAS"), NodePath("../TUN"), NodePath("../TYS"), NodePath("../NAP"), NodePath("../APU")]
 
-[node name="ADR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="ADR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(342, 525, 370, 553, 385, 553, 381, 550, 381, 523, 352, 502, 333, 482, 329, 463, 325, 462, 320, 472, 316, 464, 317, 460, 311, 458, 300, 462, 299, 480, 313, 488, 320, 510, 334, 522, 345, 522)
+full_name = "Adriatic Sea"
 terrain_type = 1
+neighbors = [NodePath("../VEN"), NodePath("../TRI"), NodePath("../ALB"), NodePath("../ION"), NodePath("../APU")]
 
-[node name="TYS" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="TYS" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(274, 496, 284, 509, 285, 515, 294, 528, 312, 535, 317, 546, 334, 561, 338, 578, 333, 589, 328, 589, 328, 585, 319, 587, 303, 587, 296, 584, 290, 585, 284, 591, 271, 604, 268, 602, 258, 607, 257, 597, 251, 594, 251, 565, 253, 564, 258, 539, 256, 528, 251, 528, 251, 523, 256, 519, 259, 512, 259, 502, 258, 496)
+full_name = "Tyrrhenian Sea"
 terrain_type = 1
+neighbors = [NodePath("../TUS"), NodePath("../ROM"), NodePath("../NAP"), NodePath("../ION"), NodePath("../TUN"), NodePath("../WES"), NodePath("../LYO")]
 
-[node name="LYO" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="LYO" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(132, 541, 127, 531, 143, 511, 150, 506, 168, 505, 181, 498, 182, 489, 182, 481, 195, 475, 203, 481, 215, 486, 229, 485, 243, 479, 255, 473, 268, 478, 274, 496, 258, 496, 255, 500, 243, 502, 245, 519, 251, 523, 251, 528, 246, 531, 237, 532, 236, 537, 177, 537, 171, 533, 164, 540)
+full_name = "Gulf of Lyon"
 terrain_type = 1
+neighbors = [NodePath("../MAR"), NodePath("../PIE"), NodePath("../TUS"), NodePath("../TYS"), NodePath("../WES"), NodePath("../SPA")]
 
-[node name="WES" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="WES" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(43, 564, 43, 570, 47, 569, 48, 578, 53, 586, 74, 592, 78, 589, 78, 594, 90, 599, 97, 597, 102, 590, 114, 593, 122, 589, 134, 586, 173, 589, 195, 597, 206, 593, 233, 599, 239, 601, 244, 596, 251, 594, 251, 565, 250, 563, 244, 567, 239, 567, 234, 559, 237, 548, 236, 537, 177, 537, 173, 543, 164, 540, 132, 541, 130, 545, 123, 546, 112, 558, 103, 557, 99, 560, 95, 569, 89, 565, 69, 560, 60, 563, 54, 562)
+full_name = "Western Mediterranean"
 terrain_type = 1
+neighbors = [NodePath("../LYO"), NodePath("../TYS"), NodePath("../TUN"), NodePath("../NAF"), NodePath("../MAO"), NodePath("../SPA")]
 
-[node name="MAO" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="MAO" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(0, 599, 20, 597, 38, 571, 43, 570, 43, 564, 39, 557, 38, 547, 31, 539, 22, 540, 9, 532, 15, 523, 14, 518, 17, 508, 15, 507, 11, 499, 16, 491, 20, 492, 35, 468, 37, 456, 41, 443, 38, 439, 45, 432, 53, 436, 55, 431, 63, 432, 68, 439, 83, 442, 111, 457, 116, 456, 129, 460, 141, 443, 139, 440, 147, 418, 142, 412, 141, 404, 142, 397, 125, 379, 118, 378, 115, 371, 118, 366, 101, 349, 67, 315, 0, 315)
+full_name = "Mid-Atlantic Ocean"
 terrain_type = 1
+neighbors = [NodePath("../NAO"), NodePath("../IRI"), NodePath("../ENG"), NodePath("../BRE"), NodePath("../GAS"), NodePath("../SPA"), NodePath("../WES"), NodePath("../POR")]
 
-[node name="BOT" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="BOT" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(358, 254, 413, 254, 421, 263, 429, 264, 434, 262, 429, 255, 428, 246, 423, 242, 420, 235, 425, 233, 427, 228, 446, 226, 459, 228, 461, 221, 469, 216, 476, 216, 473, 212, 464, 211, 463, 204, 443, 213, 420, 220, 411, 214, 401, 212, 400, 205, 403, 190, 399, 185, 397, 174, 413, 158, 421, 140, 428, 139, 423, 125, 417, 124, 409, 120, 402, 129, 399, 140, 404, 148, 395, 160, 380, 168, 369, 186, 368, 210, 376, 211, 381, 222, 378, 234, 361, 241)
+full_name = "Gulf of Bothnia"
 terrain_type = 1
+neighbors = [NodePath("../SWE"), NodePath("../FIN"), NodePath("../STP"), NodePath("../LVN"), NodePath("../BAL")]
 
-[node name="BAL" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="BAL" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(358, 254, 413, 254, 402, 264, 399, 280, 399, 286, 401, 292, 396, 302, 388, 304, 384, 315, 377, 316, 375, 306, 361, 307, 353, 315, 338, 317, 329, 316, 330, 308, 322, 307, 306, 317, 300, 316, 299, 310, 295, 307, 294, 303, 292, 294, 306, 294, 312, 300, 320, 293, 319, 288, 323, 286, 325, 292, 333, 293, 338, 282, 351, 281, 359, 264)
+full_name = "Baltic Sea"
 terrain_type = 1
+neighbors = [NodePath("../SWE"), NodePath("../BOT"), NodePath("../LVN"), NodePath("../PRU"), NodePath("../BER"), NodePath("../KIE"), NodePath("../DEN")]
 
-[node name="SKA" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="SKA" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(306, 277, 310, 280, 317, 279, 321, 280, 321, 276, 325, 272, 318, 258, 319, 251, 317, 234, 311, 222, 306, 232, 283, 242, 277, 241, 277, 258, 285, 258, 302, 257, 306, 255, 307, 270)
+full_name = "Skagerrak"
 terrain_type = 1
+neighbors = [NodePath("../NWY"), NodePath("../SWE"), NodePath("../DEN"), NodePath("../NTH")]
 
-[node name="HEL" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="HEL" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(243, 316, 260, 317, 264, 315, 270, 316, 270, 319, 281, 314, 281, 310, 282, 303, 279, 296, 281, 293, 280, 285, 282, 273, 243, 273)
+full_name = "Helgoland Bight"
 terrain_type = 1
+neighbors = [NodePath("../NTH"), NodePath("../DEN"), NodePath("../KIE"), NodePath("../HOL")]
 
-[node name="BAR" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="BAR" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(621, 1, 417, 1, 417, 39, 421, 39, 421, 49, 427, 39, 431, 44, 434, 36, 437, 39, 440, 46, 442, 38, 453, 44, 455, 48, 450, 55, 457, 56, 462, 53, 466, 57, 480, 55, 521, 71, 528, 77, 526, 92, 512, 97, 474, 96, 476, 102, 490, 109, 490, 119, 500, 137, 520, 141, 522, 137, 514, 133, 509, 128, 511, 117, 532, 126, 537, 123, 540, 116, 526, 105, 539, 85, 543, 83, 550, 86, 550, 76, 543, 72, 536, 52, 544, 50, 554, 58, 549, 64, 551, 67, 562, 69, 570, 67, 566, 56, 574, 38, 581, 31, 584, 24, 590, 27, 590, 44, 594, 39, 595, 22, 610, 7, 616, 11)
+full_name = "Barents Sea"
 terrain_type = 1
+neighbors = [NodePath("../STP"), NodePath("../NWY"), NodePath("../NWG")]
 
-[node name="NTH" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="NTH" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(272, 178, 273, 185, 268, 192, 266, 208, 268, 214, 264, 221, 266, 232, 277, 241, 277, 258, 285, 258, 282, 273, 243, 273, 243, 316, 238, 322, 236, 322, 236, 318, 228, 332, 227, 334, 220, 345, 199, 347, 193, 341, 198, 339, 190, 337, 203, 326, 205, 316, 203, 311, 197, 309, 193, 311, 191, 310, 195, 306, 196, 290, 194, 284, 188, 276, 188, 261, 185, 251, 176, 247, 190, 242, 196, 233, 197, 227, 197, 203, 203, 190, 212, 182, 225, 178)
+full_name = "North Sea"
 terrain_type = 1
+neighbors = [NodePath("../NWG"), NodePath("../NWY"), NodePath("../SKA"), NodePath("../DEN"), NodePath("../HEL"), NodePath("../HOL"), NodePath("../BEL"), NodePath("../ENG"), NodePath("../LON"), NodePath("../YOR"), NodePath("../EDI")]
 
-[node name="NWG" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="NWG" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(417, 1, 170, 1, 171, 204, 186, 209, 185, 214, 177, 217, 175, 224, 182, 223, 197, 227, 197, 203, 203, 190, 212, 182, 225, 178, 272, 178, 297, 163, 304, 164, 309, 155, 319, 152, 336, 129, 349, 99, 356, 97, 357, 87, 368, 74, 373, 63, 394, 51, 411, 45, 416, 39, 417, 39)
+full_name = "Norwegian Sea"
 terrain_type = 1
+neighbors = [NodePath("../NAO"), NodePath("../CLY"), NodePath("../EDI"), NodePath("../NTH"), NodePath("../NWY"), NodePath("../BAR")]
 
-[node name="ENG" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="ENG" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(116, 335, 101, 349, 118, 366, 140, 367, 144, 373, 157, 376, 157, 357, 164, 360, 166, 367, 173, 368, 178, 369, 176, 363, 194, 358, 199, 347, 193, 341, 184, 343, 169, 340, 154, 339, 143, 335, 138, 340, 128, 337)
+full_name = "English Channel"
 terrain_type = 1
+neighbors = [NodePath("../WAL"), NodePath("../LON"), NodePath("../NTH"), NodePath("../BEL"), NodePath("../PIC"), NodePath("../BRE"), NodePath("../MAO"), NodePath("../IRI")]
 
-[node name="IRI" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="IRI" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(67, 315, 81, 301, 100, 296, 113, 299, 126, 283, 127, 268, 138, 262, 150, 262, 157, 264, 159, 277, 155, 288, 152, 288, 139, 296, 145, 295, 147, 302, 132, 306, 133, 314, 137, 314, 146, 318, 150, 325, 141, 324, 129, 331, 116, 335, 101, 349)
+full_name = "Irish Sea"
 terrain_type = 1
+neighbors = [NodePath("../NAO"), NodePath("../LVP"), NodePath("../WAL"), NodePath("../ENG"), NodePath("../MAO")]
 
-[node name="NAO" parent="Provinces" instance=ExtResource("2_31thb")]
+[node name="NAO" parent="Provinces" node_paths=PackedStringArray("neighbors") instance=ExtResource("2_31thb")]
 polygon = PackedVector2Array(0, 315, 0, 1, 170, 1, 171, 204, 161, 210, 160, 218, 148, 227, 150, 240, 159, 247, 159, 250, 150, 257, 150, 262, 138, 262, 137, 250, 127, 245, 116, 245, 112, 249, 108, 249, 110, 252, 109, 254, 102, 254, 94, 250, 90, 251, 92, 260, 85, 263, 93, 270, 82, 282, 77, 279, 74, 288, 81, 301, 67, 315)
+full_name = "North Atlantic Ocean"
 terrain_type = 1
+neighbors = [NodePath("../NWG"), NodePath("../CLY"), NodePath("../LVP"), NodePath("../IRI"), NodePath("../MAO")]
 
 [node name="Names" type="Control" parent="."]
 layout_mode = 3
@@ -1206,3 +1355,5 @@ position = Vector2(488, 577)
 
 [node name="ANK" parent="Supply_Centers" instance=ExtResource("4_g23px")]
 position = Vector2(555, 541)
+
+[node name="Units" type="Node2D" parent="."]
