@@ -1253,6 +1253,7 @@ text = "SEV
 "
 
 [node name="WAR" type="Label" parent="Names"]
+layout_mode = 0
 offset_left = 400.0
 offset_top = 357.0
 offset_right = 434.0

@@ -26,6 +26,7 @@ func create_army(controlled_power : power_name, location : String):
 	new_arm.controller = controlled_power
 	new_arm.set_col(powers[controlled_power].color)
 	$Units.add_child(new_arm)
+	$Provinces.get_node(location).occupying_unit = new_arm
 
 func create_fleet(controlled_power : power_name, location : String):
 	var new_fleet = fleet_node.instantiate()
@@ -33,3 +34,4 @@ func create_fleet(controlled_power : power_name, location : String):
 	new_fleet.controller = controlled_power
 	new_fleet.set_col(powers[controlled_power].color)
 	$Units.add_child(new_fleet)
+	$Provinces.get_node(location).occupying_unit = new_fleet
