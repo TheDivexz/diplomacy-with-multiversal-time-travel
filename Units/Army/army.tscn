@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxxdon6lwpv5b"]
+
+[ext_resource type="Shader" path="res://Units/Army/army.gdshader" id="1_ker2p"]
+[ext_resource type="Script" path="res://Units/Army/army.gd" id="2_rq6b8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cl8w6"]
+resource_local_to_scene = true
+shader = ExtResource("1_ker2p")
+shader_parameter/unit_col = null
+
+[sub_resource type="SphereMesh" id="SphereMesh_cijq1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vpxfn"]
+resource_local_to_scene = true
+shader = ExtResource("1_ker2p")
+shader_parameter/unit_col = null
+
+[sub_resource type="SphereMesh" id="SphereMesh_7hf3n"]
+
+[node name="Army" type="MeshInstance2D"]
+material = SubResource("ShaderMaterial_cl8w6")
+scale = Vector2(16.1511, 16.1511)
+mesh = SubResource("SphereMesh_cijq1")
+script = ExtResource("2_rq6b8")
+
+[node name="Inner_Circle" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_vpxfn")
+position = Vector2(-3.72529e-09, 0)
+scale = Vector2(0.701955, 0.701955)
+mesh = SubResource("SphereMesh_7hf3n")
