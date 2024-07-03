@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c0t11xoud0ted"]
+
+[node name="arrow" type="Node2D"]
+
+[node name="head" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, -4, 5, 4, 5)
+
+[node name="tail" type="Line2D" parent="."]
+points = PackedVector2Array(0, 3, 0, 18)
+width = 1.0

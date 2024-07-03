@@ -1,7 +1,6 @@
-extends MeshInstance2D
+extends Unit
 
-enum power_name {AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY, NONE}
-@export var controller : power_name = power_name.NONE
+class_name Army
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,4 +12,4 @@ func _process(delta):
 	pass
 
 func set_col(col : Color):
-	$Inner_Circle.material.set_shader_parameter("unit_col",Vector3(col.r,col.g,col.b))
+	$outer_circle/Inner_Circle.material.set_shader_parameter("unit_col",Vector3(col.r,col.g,col.b))

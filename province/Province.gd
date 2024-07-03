@@ -10,7 +10,7 @@ enum terrain {LAND, SEA, COASTAL, IMPASSABLE }
 @export var neighbors : Array[Polygon2D]
 
 var center : Vector2
-var occupying_unit : Node2D
+var occupying_unit : Unit
 
 const HIGHLIGHT_OFFSET := 0.1
 const SEA_COLOR := Color("99ccff")
