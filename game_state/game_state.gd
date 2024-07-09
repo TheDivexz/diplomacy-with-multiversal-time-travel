@@ -1,85 +1,13 @@
 extends Node2D
 
+class_name GameState
+
+@onready var game_manager = %game_manager
+@onready var boards : Boards = $Boards
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Board.powers[$Board.power_name.AUSTRIA] = $Board.Power.new()
-	$Board.powers[$Board.power_name.AUSTRIA].name = "Austria"
-	$Board.powers[$Board.power_name.AUSTRIA].color = Color("da9b8c")
-	$Board.powers[$Board.power_name.AUSTRIA].controlled_provinces.append($Board.get_province("BUD"))
-	$Board.powers[$Board.power_name.AUSTRIA].controlled_provinces.append($Board.get_province("TRI"))
-	$Board.powers[$Board.power_name.AUSTRIA].controlled_provinces.append($Board.get_province("VIE"))
-	$Board.create_army($Board.power_name.AUSTRIA,"BUD")
-	$Board.create_army($Board.power_name.AUSTRIA,"VIE")
-	$Board.create_fleet($Board.power_name.AUSTRIA,"TRI")
-	
-	$Board.powers[$Board.power_name.ENGLAND] = $Board.Power.new()
-	$Board.powers[$Board.power_name.ENGLAND].name = "England"
-	$Board.powers[$Board.power_name.ENGLAND].color = Color("9695b8")
-	$Board.powers[$Board.power_name.ENGLAND].controlled_provinces.append($Board.get_province("EDI"))
-	$Board.powers[$Board.power_name.ENGLAND].controlled_provinces.append($Board.get_province("LON"))
-	$Board.powers[$Board.power_name.ENGLAND].controlled_provinces.append($Board.get_province("LVP"))
-	$Board.create_army($Board.power_name.ENGLAND,"LVP")
-	$Board.create_fleet($Board.power_name.ENGLAND,"EDI")
-	$Board.create_fleet($Board.power_name.ENGLAND,"LON")
-	
-	$Board.powers[$Board.power_name.FRANCE] = $Board.Power.new()
-	$Board.powers[$Board.power_name.FRANCE].name = "France"
-	$Board.powers[$Board.power_name.FRANCE].color = Color("9c9bfb")
-	$Board.powers[$Board.power_name.FRANCE].controlled_provinces.append($Board.get_province("BRE"))
-	$Board.powers[$Board.power_name.FRANCE].controlled_provinces.append($Board.get_province("MAR"))
-	$Board.powers[$Board.power_name.FRANCE].controlled_provinces.append($Board.get_province("PAR"))
-	$Board.create_army($Board.power_name.FRANCE,"MAR")
-	$Board.create_army($Board.power_name.FRANCE,"PAR")
-	$Board.create_fleet($Board.power_name.FRANCE,"BRE")
-	
-	$Board.powers[$Board.power_name.GERMANY] = $Board.Power.new()
-	$Board.powers[$Board.power_name.GERMANY].name = "Germany"
-	$Board.powers[$Board.power_name.GERMANY].color = Color("9c9a8b")
-	$Board.powers[$Board.power_name.GERMANY].controlled_provinces.append($Board.get_province("KIE"))
-	$Board.powers[$Board.power_name.GERMANY].controlled_provinces.append($Board.get_province("BER"))
-	$Board.powers[$Board.power_name.GERMANY].controlled_provinces.append($Board.get_province("MUN"))
-	$Board.create_army($Board.power_name.GERMANY,"BER")
-	$Board.create_army($Board.power_name.GERMANY,"MUN")
-	$Board.create_fleet($Board.power_name.GERMANY,"KIE")
-	
-	$Board.powers[$Board.power_name.ITALY] = $Board.Power.new()
-	$Board.powers[$Board.power_name.ITALY].name = "Italy"
-	$Board.powers[$Board.power_name.ITALY].color = Color("93c582")
-	$Board.powers[$Board.power_name.ITALY].controlled_provinces.append($Board.get_province("VEN"))
-	$Board.powers[$Board.power_name.ITALY].controlled_provinces.append($Board.get_province("ROM"))
-	$Board.powers[$Board.power_name.ITALY].controlled_provinces.append($Board.get_province("NAP"))
-	$Board.create_army($Board.power_name.ITALY,"ROM")
-	$Board.create_army($Board.power_name.ITALY,"VEN")
-	$Board.create_fleet($Board.power_name.ITALY,"NAP")
-	
-	$Board.powers[$Board.power_name.RUSSIA] = $Board.Power.new()
-	$Board.powers[$Board.power_name.RUSSIA].name = "Russia"
-	$Board.powers[$Board.power_name.RUSSIA].color = Color("d59bc4")
-	$Board.powers[$Board.power_name.RUSSIA].controlled_provinces.append($Board.get_province("MOS"))
-	$Board.powers[$Board.power_name.RUSSIA].controlled_provinces.append($Board.get_province("SEV"))
-	$Board.powers[$Board.power_name.RUSSIA].controlled_provinces.append($Board.get_province("STP"))
-	$Board.powers[$Board.power_name.RUSSIA].controlled_provinces.append($Board.get_province("WAR"))
-	$Board.create_army($Board.power_name.RUSSIA,"MOS")
-	$Board.create_army($Board.power_name.RUSSIA,"WAR")
-	$Board.create_fleet($Board.power_name.RUSSIA,"SEV")
-	$Board.create_fleet($Board.power_name.RUSSIA,"STP")
-	
-	$Board.powers[$Board.power_name.TURKEY] = $Board.Power.new()
-	$Board.powers[$Board.power_name.TURKEY].name = "Turkey"
-	$Board.powers[$Board.power_name.TURKEY].color = Color("c3c236")
-	$Board.powers[$Board.power_name.TURKEY].controlled_provinces.append($Board.get_province("CON"))
-	$Board.powers[$Board.power_name.TURKEY].controlled_provinces.append($Board.get_province("ANK"))
-	$Board.powers[$Board.power_name.TURKEY].controlled_provinces.append($Board.get_province("SMY"))
-	$Board.create_army($Board.power_name.TURKEY,"CON")
-	$Board.create_army($Board.power_name.TURKEY,"SMY")
-	$Board.create_fleet($Board.power_name.TURKEY,"ANK")
-	
-	
 	for i in range(7):
-		for prov in $Board.powers[i].controlled_provinces:
-			prov.set_ownership(i,$Board.powers[i].color)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+		var provs : Array = game_manager.setup[i]['home_provinces']
+		for prov in provs:
+			boards.set_province_ownership(Vector2i(0,0),i,prov)

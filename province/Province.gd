@@ -1,7 +1,6 @@
 class_name Province
 
 extends Polygon2D
-
 enum terrain {LAND, SEA, COASTAL, IMPASSABLE }
 
 @export var full_name : String
@@ -14,8 +13,7 @@ var occupying_unit : Unit
 
 const HIGHLIGHT_OFFSET := 0.1
 const SEA_COLOR := Color("99ccff")
-# Called when the node enters the scene tree for the first time.
-var arm = preload("res://Units/Army/army.tscn")
+
 func _ready():
 	center = centroid()
 	$Line2D.points = polygon
@@ -23,13 +21,6 @@ func _ready():
 	if terrain_type == terrain.SEA:
 		color = SEA_COLOR
 
-
-func set_ownership(control,col):
-	if supply_center == null:
-		return
-	supply_center.controller = control
-	supply_center.color = col
-	color = col
 
 func cross_product(p1: Vector2, p2 : Vector2):
 	return ((p1.x * p2.y) - (p2.x * p1.y))

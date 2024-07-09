@@ -1366,7 +1366,3 @@ position = Vector2(488, 577)
 
 [node name="ANK" parent="Supply_Centers" instance=ExtResource("4_g23px")]
 position = Vector2(555, 541)
-
-[node name="Units" type="Node2D" parent="."]
-
-[node name="Orders" type="Node2D" parent="."]
