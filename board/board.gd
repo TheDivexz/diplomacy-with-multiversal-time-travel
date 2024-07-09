@@ -28,19 +28,3 @@ func set_province_ownership(power : game_manager.power_name, province : String):
 
 func get_province(province_name : String):
 	return $Provinces.get_node(province_name)
-
-func create_army(controlled_power : game_manager.power_name, location : String):
-	var new_arm = army_node.instantiate()
-	new_arm.position = get_province(location).center
-	new_arm.controller = controlled_power
-	new_arm.set_col(powers[controlled_power].color)
-	$Units.add_child(new_arm)
-	$Provinces.get_node(location).occupying_unit = new_arm
-
-func create_fleet(controlled_power : game_manager.power_name, location : String):
-	var new_fleet = fleet_node.instantiate()
-	new_fleet.position = get_province(location).center
-	new_fleet.controller = controlled_power
-	new_fleet.set_col(powers[controlled_power].color)
-	$Units.add_child(new_fleet)
-	$Provinces.get_node(location).occupying_unit = new_fleet

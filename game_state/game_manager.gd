@@ -2,6 +2,7 @@ extends Node
 class_name game_manager
 
 enum power_name {AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY, NONE}
+enum unit_types {ARMY, FLEET}
 
 @onready var setup = {
 	game_manager.power_name.AUSTRIA : {
@@ -54,13 +55,3 @@ enum power_name {AUSTRIA, ENGLAND, FRANCE, GERMANY, ITALY, RUSSIA, TURKEY, NONE}
 		'Fleets' : ['ANK']
 	}
 }
-
-# Which boards are active. only needs to track which one is the furtherst along since all the others
-# happened in the past.
-var active_boards = {
-	0 : 0
-}
-
-# keeps track of the highest universe in both directions
-var active_above = 0
-var active_below = 0

@@ -33,7 +33,6 @@ func centroid():
 		area += cross_product(polygon[i],polygon[i+1])
 	area += cross_product(polygon[polygon.size() - 1],polygon[0])
 	area /= 2
-	#area = abs(area)
 	area = 1 / (6 * area)
 	var c := Vector2(0,0)
 	for i in polygon.size() - 1:
