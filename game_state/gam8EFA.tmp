@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://game_state/Units.gd" id="6_6rlh7"]
 [ext_resource type="Script" path="res://game_state/Orders.gd" id="7_oe0w2"]
 
-[node name="game_state" type="Node2D" groups=["Provinces"]]
+[node name="game_state" type="Node2D"]
 script = ExtResource("1_fvl5a")
 
 [node name="game_manager" type="Node" parent="."]
@@ -23,6 +23,28 @@ script = ExtResource("3_cg5b4")
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(404, 321)
 script = ExtResource("3_h33un")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera"]
+offset_left = 499.0
+offset_top = 181.0
+offset_right = 569.0
+offset_bottom = 317.0
+
+[node name="Hold" type="Button" parent="Camera/VBoxContainer"]
+layout_mode = 2
+text = "Hold"
+
+[node name="Move" type="Button" parent="Camera/VBoxContainer"]
+layout_mode = 2
+text = "Move"
+
+[node name="Convoy" type="Button" parent="Camera/VBoxContainer"]
+layout_mode = 2
+text = "Convoy"
+
+[node name="Support" type="Button" parent="Camera/VBoxContainer"]
+layout_mode = 2
+text = "Support"
 
 [node name="Units" type="Node2D" parent="."]
 script = ExtResource("6_6rlh7")

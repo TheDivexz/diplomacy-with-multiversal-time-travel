@@ -1,10 +1,16 @@
-[gd_scene format=3 uid="uid://c0t11xoud0ted"]
+[gd_scene load_steps=2 format=3 uid="uid://c0t11xoud0ted"]
+
+[ext_resource type="Script" path="res://orders/move/arrow.gd" id="1_1rl23"]
 
 [node name="arrow" type="Node2D"]
+script = ExtResource("1_1rl23")
 
 [node name="head" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, -4, 5, 4, 5)
+position = Vector2(0, -5)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, -5, 5, 5, 5)
 
 [node name="tail" type="Line2D" parent="."]
-points = PackedVector2Array(0, 3, 0, 18)
-width = 1.0
+points = PackedVector2Array(0, 0)
+width = 4.0
+default_color = Color(0, 0, 0, 1)

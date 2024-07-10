@@ -54,3 +54,8 @@ func _on_area_2d_mouse_entered():
 func _on_area_2d_mouse_exited():
 	# Stops Highlighting when mouse moves away
 	color = Color(color.r + HIGHLIGHT_OFFSET,color.g + HIGHLIGHT_OFFSET, color.b + HIGHLIGHT_OFFSET)
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if (event is InputEventMouseButton) and (event.button_index == 1) and (event.pressed == true):
+		get_tree().call_group('Provinces','province_clicked',name,get_parent().get_parent().space_time)

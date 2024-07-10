@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://j71odvb3pagx"]
+
+[ext_resource type="Script" path="res://interface/hover_tooltip/Tooltip.gd" id="1_l4m7y"]
+
+[node name="Tooltip" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_l4m7y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Abbreviation" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Full_Name" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2

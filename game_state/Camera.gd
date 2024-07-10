@@ -2,6 +2,7 @@ extends Camera2D
 
 var speed = 500
 var cam_direction = Vector2(0,0)
+var button_size := Vector2(70,31)
 
 func _physics_process(delta):
 	cam_direction.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
