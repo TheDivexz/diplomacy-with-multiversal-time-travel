@@ -39,6 +39,9 @@ func province_clicked(prov_name,space_time):
 			'province' : prov_name
 		}
 	if starting_prov != {} and ending_prov != {}:
-		orders.new_move_order(starting_prov['board'],ending_prov['board'],starting_prov['province'],ending_prov['province'])
+		if starting_prov == ending_prov:
+			orders.new_hold_order(starting_prov['board'],starting_prov['province'])
+		else:
+			orders.new_move_order(starting_prov['board'],ending_prov['board'],starting_prov['province'],ending_prov['province'])
 		starting_prov = {}
 		ending_prov = {}

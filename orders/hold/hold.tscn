@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bivp6i3wnk1k8"]
 
 [node name="hold" type="Line2D"]
-position = Vector2(0, -7)
-points = PackedVector2Array(-6, 0, 0, -2, 6, 0, 8, 7, 6, 14, 0, 16, -6, 14, -8, 7)
+position = Vector2(0, -17)
+points = PackedVector2Array(-9, -5, 0, -11, 10, -6, 12, 2, 10, 10, 0, 13, -8, 10, -11, 1)
 closed = true
-width = 1.0
+width = 3.0
+default_color = Color(0, 0, 0, 1)

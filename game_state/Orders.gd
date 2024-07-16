@@ -3,6 +3,7 @@ class_name Orders
 
 @onready var boards : Boards = $"../Boards"
 var move = preload("res://orders/move/arrow.tscn")
+var hold = preload("res://orders/hold/hold.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -18,3 +19,9 @@ func new_move_order(starting_board : Vector2i, ending_board : Vector2i, starting
 	new_move.position = center_1
 	new_move.draw_arrow(Vector2(center_2.x-center_1.x,center_2.y-center_1.y))
 	add_child(new_move)
+
+func new_hold_order(board : Vector2i, province: String):
+	var center : Vector2 = boards.get_province(board,province).center
+	var new_hold = hold.instantiate()
+	new_hold.position = center
+	add_child(new_hold)
