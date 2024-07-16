@@ -6,5 +6,10 @@ func _ready():
 	pass # Replace with function body.
 
 
-func set_tail(distance):
-	$tail.add_point(Vector2(0,distance))
+func draw_arrow(point : Vector2):
+	$tail.add_point(point)
+	$head.position = point
+	var theta = -atan(point.x/point.y)
+	if point.y < 0:
+		theta += PI
+	$head.rotation = theta 

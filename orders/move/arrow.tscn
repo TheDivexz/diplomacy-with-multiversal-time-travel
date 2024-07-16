@@ -6,11 +6,11 @@
 script = ExtResource("1_1rl23")
 
 [node name="head" type="Polygon2D" parent="."]
-position = Vector2(0, -5)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, 0, -5, 5, 5, 5)
+offset = Vector2(0, -5)
+polygon = PackedVector2Array(0, 11, -6, 5, 6, 5)
 
 [node name="tail" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0)
-width = 4.0
+width = 3.0
 default_color = Color(0, 0, 0, 1)

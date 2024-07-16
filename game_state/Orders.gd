@@ -15,16 +15,6 @@ func new_move_order(starting_board : Vector2i, ending_board : Vector2i, starting
 	var center_1 : Vector2 = boards.get_province(starting_board,starting_province).center
 	var center_2 : Vector2 = boards.get_province(ending_board,ending_province).center
 	var new_move : Arrow = move.instantiate()
-	var dist = calc_distance(center_1, center_2)
-	var arrow_vector = Vector2(center_2.x-center_1.x,center_2.y-center_1.y)
-	var unit_vector = arrow_vector / dist
-	center_2 -= unit_vector * 6
-	#center_1 += unit_vector
-	new_move.position = center_2
-	var theta = acos(abs(center_2.x-center_1.x)/dist)
-	if center_2.x < center_1.x:
-		theta *= -1
-	dist = calc_distance(center_1, center_2)
-	new_move.set_tail(dist)
-	new_move.rotation = theta * 2
+	new_move.position = center_1
+	new_move.draw_arrow(Vector2(center_2.x-center_1.x,center_2.y-center_1.y))
 	add_child(new_move)
